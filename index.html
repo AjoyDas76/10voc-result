@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="letterhead">
+      <div class="letterhead-inner">
+        <div class="letterhead-row">
+          <img id="schoolLogo" class="school-logo" alt="School Logo" style="display:none;">
+          <div id="schoolLogoFallback" class="school-logo-fallback">?</div>
+          <div>
+            <p class="school-name" id="schoolName">স্কুলের নাম লোড হচ্ছে...</p>
+            <p class="school-address" id="schoolAddress"></p>
+          </div>
+        </div>
+        <span class="exam-tag" id="examTag"></span>
+      </div>
+    </header>
+
+    <section class="search-card no-print">
+      <label class="search-label" for="rollInput">Roll Number দিয়ে ফলাফল খুঁজুন</label>
+      <div class="search-row">
+        <input type="text" id="rollInput" inputmode="numeric" placeholder="যেমনঃ 101" autocomplete="off">
+        <button class="btn btn-primary" id="searchBtn">খুঁজুন</button>
+      </div>
+      <p class="hint">শুধু Roll Number লিখে Enter চাপুন অথবা "খুঁজুন" বাটনে ক্লিক করুন।</p>
+      <div class="error-msg" id="errorMsg"></div>
+    </section>
+
+    <section class="result-card" id="resultCard">
+      <div class="result-top">
+        <div>
+          <p class="student-name" id="studentName"></p>
+          <div class="student-meta">
+            <span>Roll:</span><b id="metaRoll"></b>
+            <span>শ্রেণি:</span><b id="metaClass"></b>
+          </div>
+        </div>
+        <div class="seal" id="seal">
+          <span class="seal-label">GPA</span>
+          <span class="seal-value" id="sealValue">-</span>
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;">
+      <table class="subject-table">
+        <thead>
+          <tr>
+            <th>বিষয়</th>
+            <th>মোট নম্বর</th>
+            <th>প্রাপ্ত নম্বর</th>
+            <th>গ্রেড</th>
+            <th>পয়েন্ট</th>
+          </tr>
+        </thead>
+        <tbody id="subjectRows"></tbody>
+      </table>
+      </div>
+
+      <div class="summary">
+        <div class="summary-box">
+          <div class="label">ফলাফল</div>
+          <div class="value" id="statusValue">-</div>
+        </div>
+        <div class="summary-box">
+          <div class="label">সর্বমোট GPA</div>
+          <div class="value" id="gpaValue">-</div>
+        </div>
+        <div class="summary-box">
+          <div class="label">ফেল বিষয়</div>
+          <div class="value" id="failValue">-</div>
+        </div>
+      </div>
+
+      <div class="result-actions no-print">
+        <button class="btn btn-outline" id="printBtn">🖨️ Result Print করুন</button>
+      </div>
+    </section>
+
+    <p class="footer no-print">এই পোর্টালটি ফ্রি হোস্ট করা হয়েছে GitHub Pages-এ • results.json ফাইল আপডেট করলেই নতুন রেজাল্ট প্রকাশিত হবে</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
