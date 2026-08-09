@@ -2,3264 +2,3275 @@
   "school": {
     "name": "প্রবর্তক স্কুল এন্ড কলেজ",
     "address": "পাঁচলাইশ, চট্টগ্রাম",
-    "logo": "logo.png",
-    "examName": "প্রাক-নির্বাচনি পরীক্ষা-২০২৬",
-    "examClass": "১০ম শ্রেণি (ভোকেশনাল)"
+    "logo": "logo.png"
   },
-  "students": [
+  "exams": [
     {
-      "roll": "01",
-      "name": "Pranti Shil (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 42,
-          "grade": "A"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 45,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 50,
-          "grade": "A+"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 32,
-          "grade": "A"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 20.5,
-          "grade": "A-"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 16.5,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 13,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 22,
-          "grade": "A"
-        }
-      ]
+      "id": "first_assessment",
+      "label": "১ম মূল্যায়ন পরীক্ষার ফলাফল",
+      "examClass": "১০ম শ্রেণি (ভোকেশনাল)",
+      "students": []
     },
     {
-      "roll": "02",
-      "name": "Sristy Nath (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 51,
-          "grade": "A+"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 44,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 57,
-          "grade": "A+"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 36,
-          "grade": "A+"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 38,
-          "grade": "A-"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 16.5,
-          "grade": "B"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 18.5,
-          "grade": "A-"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 12,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 21,
-          "grade": "A"
-        }
-      ]
-    },
-    {
-      "roll": "03",
-      "name": "Durga Sen (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 39,
-          "grade": "A-"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 42,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 51,
-          "grade": "A+"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 28,
-          "grade": "A-"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 40,
-          "grade": "A-"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 11.5,
-          "grade": "D"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 20,
-          "grade": "A-"
-        }
-      ]
-    },
-    {
-      "roll": "04",
-      "name": "Srabonti Roy",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 18,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 0.5,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 9,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "05",
-      "name": "Sristy Nath (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 48,
-          "grade": "A+"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 58,
-          "grade": "A+"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 37,
-          "grade": "A+"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 17,
-          "grade": "B"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 19,
-          "grade": "A-"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 23,
-          "grade": "A"
-        }
-      ]
-    },
-    {
-      "roll": "06",
-      "name": "Ritu Goswami (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 43,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 21,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 5.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 11.5,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 17,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "07",
-      "name": "Nabamita Das (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 39,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 27,
-          "grade": "A-"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 14,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 19,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 5,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 21,
-          "grade": "A"
-        }
-      ]
-    },
-    {
-      "roll": "08",
-      "name": "Surabi Das (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 49,
-          "grade": "A+"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 48,
-          "grade": "A+"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 47,
-          "grade": "A"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 32,
-          "grade": "A"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 18.5,
-          "grade": "A-"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 19,
-          "grade": "A-"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 27,
-          "grade": "A+"
-        }
-      ]
-    },
-    {
-      "roll": "09",
-      "name": "Jui Das",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 36,
-          "grade": "A-"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 44,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 41,
-          "grade": "A-"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 19,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 22,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 10.5,
-          "grade": "D"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 9.5,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 10,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "10",
-      "name": "Tumpa Devi (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 39,
-          "grade": "A-"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 46,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 44,
-          "grade": "A"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 23,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 32,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 12.5,
-          "grade": "C"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 13.5,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 19,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 22,
-          "grade": "A"
-        }
-      ]
-    },
-    {
-      "roll": "11",
-      "name": "Supriya Rani Shill (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 52,
-          "grade": "A+"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 22,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 11.5,
-          "grade": "D"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 12,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 18,
-          "grade": "A-"
-        }
-      ]
-    },
-    {
-      "roll": "12",
-      "name": "Nipu Akter",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 42,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 24,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 32,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 0.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 18,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 17,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "13",
-      "name": "Rabina Akther",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 35,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 43,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 24,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 40,
-          "grade": "A-"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 3.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 16,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 18,
-          "grade": "A-"
-        }
-      ]
-    },
-    {
-      "roll": "14",
-      "name": "Baishakhi Chakma (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 46,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 23,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 43,
-          "grade": "A"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 10,
-          "grade": "D"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 23,
-          "grade": "A"
-        }
-      ]
-    },
-    {
-      "roll": "15",
-      "name": "Miful Debi Momo (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 51,
-          "grade": "A+"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 42,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 37,
-          "grade": "A+"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 42,
-          "grade": "A"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 11,
-          "grade": "D"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 18.5,
-          "grade": "A-"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 17,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "16",
-      "name": "Arpita Das",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 35,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 38,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 20,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 1,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 11.5,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 13,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "17",
-      "name": "Mahmuda Akther Sumona",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "18",
-      "name": "Anika Akther Yasmin",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 19,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 7.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 10,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 39,
-          "grade": "A-"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 23,
-          "grade": "A"
-        }
-      ]
-    },
-    {
-      "roll": "19",
-      "name": "Sangita Devi (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 37,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 18,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 23,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 7.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 12,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 39,
-          "grade": "A-"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 20,
-          "grade": "A-"
-        }
-      ]
-    },
-    {
-      "roll": "20",
-      "name": "Sadia Akther",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 36,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 17,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 19,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 32,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 6,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 11.5,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 32,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 38,
-          "grade": "A-"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 28,
-          "grade": "A+"
-        }
-      ]
-    },
-    {
-      "roll": "21",
-      "name": "Arpita Dev (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 36,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 36,
-          "grade": "A-"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 22,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 6.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 14,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 36,
-          "grade": "A-"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 41,
-          "grade": "A-"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 21,
-          "grade": "A"
-        }
-      ]
-    },
-    {
-      "roll": "22",
-      "name": "Keli Chakma (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 46,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 25,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 43,
-          "grade": "A"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 4.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 37,
-          "grade": "A-"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 14,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "23",
-      "name": "Rajesh Chowdhury",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 32,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 27,
-          "grade": "A-"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 16,
-          "grade": "B"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 16.5,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 38,
-          "grade": "A-"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "24",
-      "name": "Lavlu Das",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 41,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 17,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 25,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 33.5,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "25",
-      "name": "Prattoy Nath",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 40,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 24,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 16,
-          "grade": "B"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 41,
-          "grade": "A-"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 37,
-          "grade": "A-"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 12,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "26",
-      "name": "Minhaz Uddin",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 12,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 18,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 4,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 11,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 35,
-          "grade": "B"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 11,
-          "grade": "D"
-        }
-      ]
-    },
-    {
-      "roll": "27",
-      "name": "Muhammad Yasir Rahat Wasi",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 18,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 11,
-          "grade": "F"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 2,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 5,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 14,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 9,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "28",
-      "name": "Sayed Ehtesham Uddin Tasin",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 15,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 12,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 8,
-          "grade": "F"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 4,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 2.5,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 4,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "29",
-      "name": "Abdullah Al Noman",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 10,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 17,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 11,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 8,
-          "grade": "F"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 10,
-          "grade": "F"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 1,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 5.5,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 13,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 13,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 4,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "30",
-      "name": "Mohammad Tamim",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 18,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 37,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 19,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 15,
-          "grade": "D"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 7.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 10,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "31",
-      "name": "Nure Alam Prince",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "32",
-      "name": "Swapnil Das",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 16,
-          "grade": "D"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 12.5,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 15,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 10,
-          "grade": "D"
-        }
-      ]
-    },
-    {
-      "roll": "33",
-      "name": "Ejoy Nath (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 19,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 3.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 10,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 10,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "34",
-      "name": "Ajoy Chowdhury",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 10,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 33,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 20,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 2.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 12.5,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 11,
-          "grade": "D"
-        }
-      ]
-    },
-    {
-      "roll": "35",
-      "name": "Juonal Tripura (H)",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 31,
-          "grade": "B"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 18,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 17,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 24,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 2.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 39,
-          "grade": "A-"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 14,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "36",
-      "name": "Roni Dhar",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 14,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 17,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 16,
-          "grade": "D"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 10,
-          "grade": "D"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 8.5,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 8,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "37",
-      "name": "Abu Sayeed Siddiki Tashin",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 18,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 39,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 23,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 36,
-          "grade": "A-"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 9.5,
-          "grade": "D"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 12.5,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 35,
-          "grade": "B"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 19,
-          "grade": "A-"
-        }
-      ]
-    },
-    {
-      "roll": "38",
-      "name": "Srabanta Sen",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 13,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 23,
-          "grade": "B"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 4.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 14,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 17,
-          "grade": "F"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "39",
-      "name": "Mohammad Hasan",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 17,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 14,
-          "grade": "F"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 10,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 1,
-          "grade": "F"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 20,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 4.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 3,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 1.5,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "40",
-      "name": "Md Towfiq Elahi",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 45,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 42,
-          "grade": "A"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 16,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 27,
-          "grade": "A-"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 38,
-          "grade": "A-"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 12,
-          "grade": "C"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 11.5,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 30,
-          "grade": "B"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 34,
-          "grade": "B"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 15,
-          "grade": "B"
-        }
-      ]
-    },
-    {
-      "roll": "41",
-      "name": "Mohammed Sayem Uddin",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 0,
-          "grade": "F"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 41,
-          "grade": "A-"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 18,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 15,
-          "grade": "D"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 12.5,
-          "grade": "C"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 11,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 19,
-          "grade": "D"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 0,
-          "grade": "F"
-        }
-      ]
-    },
-    {
-      "roll": "42",
-      "name": "Muhit Ullah Siam",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 29,
-          "grade": "C"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 27,
-          "grade": "C"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 20,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 21,
-          "grade": "D"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 12.5,
-          "grade": "C"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 3,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 42,
-          "grade": "A"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 19,
-          "grade": "D"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "43",
-      "name": "Abu Huraiya Siddiki Bakthiar",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 25,
-          "grade": "C"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 22,
-          "grade": "D"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 15,
-          "grade": "F"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 21,
-          "grade": "C"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 48,
-          "grade": "A+"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 4.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 6.5,
-          "grade": "F"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 26,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 28,
-          "grade": "C"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 13,
-          "grade": "C"
-        }
-      ]
-    },
-    {
-      "roll": "44",
-      "name": "Tanimul Hasan Tanim",
-      "class": "১০ম",
-      "section": "ভোকেশনাল",
-      "subjects": [
-        {
-          "name": "বাংলা",
-          "total": 60,
-          "obtained": 23,
-          "grade": "D"
-        },
-        {
-          "name": "ইংরেজি",
-          "total": 60,
-          "obtained": 46,
-          "grade": "A"
-        },
-        {
-          "name": "গণিত",
-          "total": 60,
-          "obtained": 36,
-          "grade": "A-"
-        },
-        {
-          "name": "বা.বি.প.",
-          "total": 60,
-          "obtained": 24,
-          "grade": "C"
-        },
-        {
-          "name": "কৃষি শিক্ষা",
-          "total": 45,
-          "obtained": 32,
-          "grade": "A"
-        },
-        {
-          "name": "ধর্ম",
-          "total": 60,
-          "obtained": 44,
-          "grade": "A"
-        },
-        {
-          "name": "পদার্থ",
-          "total": 30,
-          "obtained": 8.5,
-          "grade": "F"
-        },
-        {
-          "name": "রসায়ন",
-          "total": 30,
-          "obtained": 13.5,
-          "grade": "C"
-        },
-        {
-          "name": "ট্রেড-৩",
-          "total": 60,
-          "obtained": 48,
-          "grade": "A+"
-        },
-        {
-          "name": "ট্রেড-৪",
-          "total": 60,
-          "obtained": 49,
-          "grade": "A+"
-        },
-        {
-          "name": "আত্নকর্ম",
-          "total": 30,
-          "obtained": 19,
-          "grade": "A-"
+      "id": "pre_selection",
+      "label": "প্রাক-নির্বাচনি পরীক্ষার ফলাফল",
+      "examClass": "১০ম শ্রেণি (ভোকেশনাল)",
+      "students": [
+        {
+          "roll": "01",
+          "name": "Pranti Shil (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 42,
+              "grade": "A"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 45,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 50,
+              "grade": "A+"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 32,
+              "grade": "A"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 20.5,
+              "grade": "A-"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 16.5,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 13,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 22,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "02",
+          "name": "Sristy Nath (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 51,
+              "grade": "A+"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 44,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 57,
+              "grade": "A+"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 36,
+              "grade": "A+"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 38,
+              "grade": "A-"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 16.5,
+              "grade": "B"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 18.5,
+              "grade": "A-"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 12,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 21,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "03",
+          "name": "Durga Sen (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 39,
+              "grade": "A-"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 42,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 51,
+              "grade": "A+"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 28,
+              "grade": "A-"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 40,
+              "grade": "A-"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 11.5,
+              "grade": "D"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 20,
+              "grade": "A-"
+            }
+          ]
+        },
+        {
+          "roll": "04",
+          "name": "Srabonti Roy",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 18,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 0.5,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 9,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "05",
+          "name": "Sristy Nath (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 48,
+              "grade": "A+"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 58,
+              "grade": "A+"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 37,
+              "grade": "A+"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 17,
+              "grade": "B"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 19,
+              "grade": "A-"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 23,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "06",
+          "name": "Ritu Goswami (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 43,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 21,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 5.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 11.5,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 17,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "07",
+          "name": "Nabamita Das (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 39,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 27,
+              "grade": "A-"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 14,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 19,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 5,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 21,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "08",
+          "name": "Surabi Das (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 49,
+              "grade": "A+"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 48,
+              "grade": "A+"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 47,
+              "grade": "A"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 32,
+              "grade": "A"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 18.5,
+              "grade": "A-"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 19,
+              "grade": "A-"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 27,
+              "grade": "A+"
+            }
+          ]
+        },
+        {
+          "roll": "09",
+          "name": "Jui Das",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 36,
+              "grade": "A-"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 44,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 41,
+              "grade": "A-"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 19,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 22,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 10.5,
+              "grade": "D"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 9.5,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 10,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "10",
+          "name": "Tumpa Devi (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 39,
+              "grade": "A-"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 46,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 44,
+              "grade": "A"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 23,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 32,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 12.5,
+              "grade": "C"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 13.5,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 19,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 22,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "11",
+          "name": "Supriya Rani Shill (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 52,
+              "grade": "A+"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 22,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 11.5,
+              "grade": "D"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 12,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 18,
+              "grade": "A-"
+            }
+          ]
+        },
+        {
+          "roll": "12",
+          "name": "Nipu Akter",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 42,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 24,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 32,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 0.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 18,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 17,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "13",
+          "name": "Rabina Akther",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 35,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 43,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 24,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 40,
+              "grade": "A-"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 3.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 16,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 18,
+              "grade": "A-"
+            }
+          ]
+        },
+        {
+          "roll": "14",
+          "name": "Baishakhi Chakma (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 46,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 23,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 43,
+              "grade": "A"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 10,
+              "grade": "D"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 23,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "15",
+          "name": "Miful Debi Momo (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 51,
+              "grade": "A+"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 42,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 37,
+              "grade": "A+"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 42,
+              "grade": "A"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 11,
+              "grade": "D"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 18.5,
+              "grade": "A-"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 17,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "16",
+          "name": "Arpita Das",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 35,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 38,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 20,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 1,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 11.5,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 13,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "17",
+          "name": "Mahmuda Akther Sumona",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "18",
+          "name": "Anika Akther Yasmin",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 19,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 7.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 10,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 39,
+              "grade": "A-"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 23,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "19",
+          "name": "Sangita Devi (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 37,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 18,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 23,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 7.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 12,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 39,
+              "grade": "A-"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 20,
+              "grade": "A-"
+            }
+          ]
+        },
+        {
+          "roll": "20",
+          "name": "Sadia Akther",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 36,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 17,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 19,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 32,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 6,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 11.5,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 32,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 38,
+              "grade": "A-"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 28,
+              "grade": "A+"
+            }
+          ]
+        },
+        {
+          "roll": "21",
+          "name": "Arpita Dev (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 36,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 36,
+              "grade": "A-"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 22,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 6.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 14,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 36,
+              "grade": "A-"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 41,
+              "grade": "A-"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 21,
+              "grade": "A"
+            }
+          ]
+        },
+        {
+          "roll": "22",
+          "name": "Keli Chakma (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 46,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 25,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 43,
+              "grade": "A"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 4.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 37,
+              "grade": "A-"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 14,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "23",
+          "name": "Rajesh Chowdhury",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 32,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 27,
+              "grade": "A-"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 16,
+              "grade": "B"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 16.5,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 38,
+              "grade": "A-"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "24",
+          "name": "Lavlu Das",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 41,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 17,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 25,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 33.5,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "25",
+          "name": "Prattoy Nath",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 40,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 24,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 16,
+              "grade": "B"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 41,
+              "grade": "A-"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 37,
+              "grade": "A-"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 12,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "26",
+          "name": "Minhaz Uddin",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 12,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 18,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 4,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 11,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 35,
+              "grade": "B"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 11,
+              "grade": "D"
+            }
+          ]
+        },
+        {
+          "roll": "27",
+          "name": "Muhammad Yasir Rahat Wasi",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 18,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 11,
+              "grade": "F"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 2,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 5,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 14,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 9,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "28",
+          "name": "Sayed Ehtesham Uddin Tasin",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 15,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 12,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 8,
+              "grade": "F"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 4,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 2.5,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 4,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "29",
+          "name": "Abdullah Al Noman",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 10,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 17,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 11,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 8,
+              "grade": "F"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 10,
+              "grade": "F"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 1,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 5.5,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 13,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 13,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 4,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "30",
+          "name": "Mohammad Tamim",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 18,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 37,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 19,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 15,
+              "grade": "D"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 7.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 10,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "31",
+          "name": "Nure Alam Prince",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "32",
+          "name": "Swapnil Das",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 16,
+              "grade": "D"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 12.5,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 15,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 10,
+              "grade": "D"
+            }
+          ]
+        },
+        {
+          "roll": "33",
+          "name": "Ejoy Nath (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 19,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 3.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 10,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 10,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "34",
+          "name": "Ajoy Chowdhury",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 10,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 33,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 20,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 2.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 12.5,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 11,
+              "grade": "D"
+            }
+          ]
+        },
+        {
+          "roll": "35",
+          "name": "Juonal Tripura (H)",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 31,
+              "grade": "B"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 18,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 17,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 24,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 2.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 39,
+              "grade": "A-"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 14,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "36",
+          "name": "Roni Dhar",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 14,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 17,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 16,
+              "grade": "D"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 10,
+              "grade": "D"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 8.5,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 8,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "37",
+          "name": "Abu Sayeed Siddiki Tashin",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 18,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 39,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 23,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 36,
+              "grade": "A-"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 9.5,
+              "grade": "D"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 12.5,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 35,
+              "grade": "B"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 19,
+              "grade": "A-"
+            }
+          ]
+        },
+        {
+          "roll": "38",
+          "name": "Srabanta Sen",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 13,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 23,
+              "grade": "B"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 4.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 14,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 17,
+              "grade": "F"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "39",
+          "name": "Mohammad Hasan",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 17,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 14,
+              "grade": "F"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 10,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 1,
+              "grade": "F"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 20,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 4.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 3,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 1.5,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "40",
+          "name": "Md Towfiq Elahi",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 45,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 42,
+              "grade": "A"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 16,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 27,
+              "grade": "A-"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 38,
+              "grade": "A-"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 12,
+              "grade": "C"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 11.5,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 30,
+              "grade": "B"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 34,
+              "grade": "B"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 15,
+              "grade": "B"
+            }
+          ]
+        },
+        {
+          "roll": "41",
+          "name": "Mohammed Sayem Uddin",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 0,
+              "grade": "F"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 41,
+              "grade": "A-"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 18,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 15,
+              "grade": "D"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 12.5,
+              "grade": "C"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 11,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 19,
+              "grade": "D"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 0,
+              "grade": "F"
+            }
+          ]
+        },
+        {
+          "roll": "42",
+          "name": "Muhit Ullah Siam",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 29,
+              "grade": "C"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 27,
+              "grade": "C"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 20,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 21,
+              "grade": "D"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 12.5,
+              "grade": "C"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 3,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 42,
+              "grade": "A"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 19,
+              "grade": "D"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "43",
+          "name": "Abu Huraiya Siddiki Bakthiar",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 25,
+              "grade": "C"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 22,
+              "grade": "D"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 15,
+              "grade": "F"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 21,
+              "grade": "C"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 48,
+              "grade": "A+"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 4.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 6.5,
+              "grade": "F"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 26,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 28,
+              "grade": "C"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 13,
+              "grade": "C"
+            }
+          ]
+        },
+        {
+          "roll": "44",
+          "name": "Tanimul Hasan Tanim",
+          "class": "১০ম",
+          "section": "ভোকেশনাল",
+          "subjects": [
+            {
+              "name": "বাংলা",
+              "total": 60,
+              "obtained": 23,
+              "grade": "D"
+            },
+            {
+              "name": "ইংরেজি",
+              "total": 60,
+              "obtained": 46,
+              "grade": "A"
+            },
+            {
+              "name": "গণিত",
+              "total": 60,
+              "obtained": 36,
+              "grade": "A-"
+            },
+            {
+              "name": "বা.বি.প.",
+              "total": 60,
+              "obtained": 24,
+              "grade": "C"
+            },
+            {
+              "name": "কৃষি শিক্ষা",
+              "total": 45,
+              "obtained": 32,
+              "grade": "A"
+            },
+            {
+              "name": "ধর্ম",
+              "total": 60,
+              "obtained": 44,
+              "grade": "A"
+            },
+            {
+              "name": "পদার্থ",
+              "total": 30,
+              "obtained": 8.5,
+              "grade": "F"
+            },
+            {
+              "name": "রসায়ন",
+              "total": 30,
+              "obtained": 13.5,
+              "grade": "C"
+            },
+            {
+              "name": "ট্রেড-৩",
+              "total": 60,
+              "obtained": 48,
+              "grade": "A+"
+            },
+            {
+              "name": "ট্রেড-৪",
+              "total": 60,
+              "obtained": 49,
+              "grade": "A+"
+            },
+            {
+              "name": "আত্নকর্ম",
+              "total": 30,
+              "obtained": 19,
+              "grade": "A-"
+            }
+          ]
         }
       ]
     }

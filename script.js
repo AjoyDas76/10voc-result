@@ -10,6 +10,7 @@ const GRADE_POINTS = {
 };
 
 let DATA = null;
+let currentExamId = null;
 
 const el = (id) => document.getElementById(id);
 
@@ -19,6 +20,7 @@ async function loadData() {
     if (!res.ok) throw new Error("results.json fetch failed");
     DATA = await res.json();
     renderLetterhead(DATA.school);
+    setupExamSelect(DATA.exams || []);
   } catch (err) {
     console.error(err);
     showError("রেজাল্ট ডেটা লোড করা যায়নি। results.json ফাইলটি ঠিক আছে কিনা যাচাই করুন।");
@@ -29,7 +31,6 @@ function renderLetterhead(school) {
   if (!school) return;
   el("schoolName").textContent = school.name || "";
   el("schoolAddress").textContent = school.address || "";
-  el("examTag").textContent = [school.examClass, school.examName].filter(Boolean).join(" • ");
   document.title = (school.name ? school.name + " - " : "") + "Result Portal";
 
   const logoImg = el("schoolLogo");
@@ -47,6 +48,53 @@ function renderLetterhead(school) {
     fallback.style.display = "flex";
   }
   fallback.textContent = (school.name || "?").trim().charAt(0);
+}
+
+function setupExamSelect(exams) {
+  const select = el("examSelect");
+  select.innerHTML = "";
+
+  if (!exams.length) {
+    const opt = document.createElement("option");
+    opt.textContent = "কোনো পরীক্ষা পাওয়া যায়নি";
+    select.appendChild(opt);
+    return;
+  }
+
+  exams.forEach((exam) => {
+    const opt = document.createElement("option");
+    opt.value = exam.id;
+    opt.textContent = exam.label || exam.id;
+    select.appendChild(opt);
+  });
+
+  // default to the last exam that actually has published results, else the first
+  const withData = exams.filter((e) => Array.isArray(e.students) && e.students.length > 0);
+  const defaultExam = withData.length ? withData[withData.length - 1] : exams[0];
+  select.value = defaultExam.id;
+
+  onExamChange();
+  select.addEventListener("change", onExamChange);
+}
+
+function getCurrentExam() {
+  if (!DATA || !Array.isArray(DATA.exams)) return null;
+  return DATA.exams.find((e) => e.id === currentExamId) || null;
+}
+
+function onExamChange() {
+  currentExamId = el("examSelect").value;
+  hideError();
+  el("resultCard").style.display = "none";
+  el("rollInput").value = "";
+
+  const exam = getCurrentExam();
+  const emptyMsg = el("examEmptyMsg");
+  const hasData = exam && Array.isArray(exam.students) && exam.students.length > 0;
+  emptyMsg.style.display = hasData ? "none" : "block";
+
+  const examTag = el("examTag");
+  examTag.textContent = exam ? [exam.examClass, exam.label].filter(Boolean).join(" • ") : "";
 }
 
 function showError(msg) {
@@ -147,12 +195,18 @@ function search() {
     showError("অনুগ্রহ করে একটি Roll Number লিখুন।");
     return;
   }
-  if (!DATA || !Array.isArray(DATA.students)) {
-    showError("রেজাল্ট ডেটা এখনো লোড হয়নি, একটু পর আবার চেষ্টা করুন।");
+
+  const exam = getCurrentExam();
+  if (!exam) {
+    showError("পরীক্ষা নির্বাচন করা যায়নি, একটু পর আবার চেষ্টা করুন।");
+    return;
+  }
+  if (!Array.isArray(exam.students) || exam.students.length === 0) {
+    showError("এই পরীক্ষার ফলাফল এখনো প্রকাশিত হয়নি।");
     return;
   }
 
-  const student = DATA.students.find((s) => String(s.roll).trim() === roll);
+  const student = exam.students.find((s) => String(s.roll).trim() === roll);
   if (!student) {
     showError("এই Roll Number-এ কোনো ফলাফল পাওয়া যায়নি। Roll Number আবার যাচাই করুন।");
     return;

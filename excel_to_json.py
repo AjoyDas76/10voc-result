@@ -157,6 +157,8 @@ def main():
     ap.add_argument("--exam-name", default=None)
     ap.add_argument("--exam-class", default=None)
     ap.add_argument("--section", default=None)
+    ap.add_argument("--exam-id", required=True, help="stable id for this exam, e.g. first_assessment")
+    ap.add_argument("--exam-label", default=None, help="text shown in the dropdown, defaults to --exam-name")
     ap.add_argument("--school-name", default="প্রবর্তক স্কুল এন্ড কলেজ")
     ap.add_argument("--school-address", default="পাঁচলাইশ, চট্টগ্রাম")
     args = ap.parse_args()
@@ -234,21 +236,45 @@ def main():
         })
         auto_roll += 1
 
-    data = {
-        "school": {
-            "name": args.school_name,
-            "address": args.school_address,
-            "logo": "logo.png",
-            "examName": exam_name,
-            "examClass": f"{exam_class} শ্রেণি" + (f" ({section})" if section else "")
-        },
+    exam_entry = {
+        "id": args.exam_id,
+        "label": args.exam_label or exam_name or args.exam_id,
+        "examClass": f"{exam_class} শ্রেণি" + (f" ({section})" if section else ""),
         "students": students
     }
+
+    # load existing multi-exam file if present, so we only touch this one exam
+    existing = None
+    try:
+        with open(args.output, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing = None
+
+    if existing and "exams" in existing:
+        data = existing
+        data["school"]["name"] = args.school_name or data["school"].get("name")
+        data["school"]["address"] = args.school_address or data["school"].get("address")
+        exams = data["exams"]
+        idx = next((i for i, e in enumerate(exams) if e["id"] == args.exam_id), None)
+        if idx is not None:
+            exams[idx] = exam_entry
+        else:
+            exams.append(exam_entry)
+    else:
+        data = {
+            "school": {
+                "name": args.school_name,
+                "address": args.school_address,
+                "logo": "logo.png"
+            },
+            "exams": [exam_entry]
+        }
 
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {len(students)} students -> {args.output}")
+    print(f"Wrote {len(students)} students -> exam '{args.exam_id}' in {args.output}")
     print(f"Roll source: {'sheet column' if roll_col else ('roster file' if roll_lookup else 'auto-numbered')}")
     print(f"Subjects detected: {[s[0] for s in subjects]}")
 
