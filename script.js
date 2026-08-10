@@ -149,6 +149,9 @@ function renderResult(student) {
   el("studentName").textContent = student.name;
   el("metaRoll").textContent = student.roll;
   el("metaClass").textContent = [student.class, student.section].filter(Boolean).join(" - ");
+  const metaGPA = el("metaGPA");
+  metaGPA.textContent = r.gpa;
+  metaGPA.className = r.pass ? "status-pass" : "status-fail";
 
   const tbody = el("subjectRows");
   tbody.innerHTML = "";
@@ -166,16 +169,22 @@ function renderResult(student) {
     tbody.appendChild(tr);
   });
 
-  const seal = el("seal");
-  seal.classList.toggle("fail", !r.pass);
-  el("sealValue").textContent = r.gpa;
-
   const statusEl = el("statusValue");
   statusEl.textContent = r.pass ? "উত্তীর্ণ" : "অনুত্তীর্ণ";
   statusEl.className = "value " + (r.pass ? "status-pass" : "status-fail");
 
   el("gpaValue").textContent = r.gpa;
   el("failValue").textContent = r.failCount;
+
+  const failBox = el("failBox");
+  const summaryGrid = failBox.parentElement;
+  if (r.pass) {
+    failBox.style.display = "none";
+    summaryGrid.classList.add("two-col");
+  } else {
+    failBox.style.display = "";
+    summaryGrid.classList.remove("two-col");
+  }
 
   el("resultCard").style.display = "block";
 }

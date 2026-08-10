@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Class 10 Vocational Result Portal</title>
+<title>Result Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -46,11 +46,8 @@
           <div class="student-meta">
             <span>Roll:</span><b id="metaRoll"></b>
             <span>শ্রেণি:</span><b id="metaClass"></b>
+            <span>GPA:</span><b id="metaGPA"></b>
           </div>
-        </div>
-        <div class="seal" id="seal">
-          <span class="seal-label">GPA</span>
-          <span class="seal-value" id="sealValue">-</span>
         </div>
       </div>
 
@@ -78,7 +75,7 @@
           <div class="label">সর্বমোট GPA</div>
           <div class="value" id="gpaValue">-</div>
         </div>
-        <div class="summary-box">
+        <div class="summary-box" id="failBox">
           <div class="label">ফেল বিষয়</div>
           <div class="value" id="failValue">-</div>
         </div>
@@ -89,7 +86,7 @@
       </div>
     </section>
 
-    <p class="footer no-print">Website Developed By Ajoy Das</p>
+    <p class="footer no-print">এই পোর্টালটি ফ্রি হোস্ট করা হয়েছে GitHub Pages-এ • results.json ফাইল আপডেট করলেই নতুন রেজাল্ট প্রকাশিত হবে</p>
   </div>
 
   <script src="script.js"></script>

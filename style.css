@@ -389,6 +389,10 @@ a { color: inherit; }
   gap: 10px;
 }
 
+.summary.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .summary-box {
   background: #FBFAF5;
   border: 1px solid #EAE6D9;
@@ -411,6 +415,10 @@ a { color: inherit; }
 
 .status-pass { color: var(--color-green-dark); }
 .status-fail { color: var(--color-maroon); }
+
+#metaGPA {
+  font-weight: 700;
+}
 
 .result-actions {
   margin-top: 20px;
