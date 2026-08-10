@@ -426,6 +426,39 @@ a { color: inherit; }
   justify-content: center;
 }
 
+/* Signature block (visible on screen and print) */
+.signature-block {
+  margin-top: 46px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.signature-col {
+  flex: 1;
+  max-width: 220px;
+  text-align: center;
+}
+
+.signature-col:first-child {
+  margin-right: auto;
+}
+
+.signature-col:last-child {
+  margin-left: auto;
+}
+
+.signature-line {
+  border-top: 1.5px solid var(--color-ink-soft);
+  margin-bottom: 6px;
+}
+
+.signature-label {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
 /* Footer */
 .footer {
   text-align: center;
