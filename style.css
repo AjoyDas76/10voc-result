@@ -429,28 +429,18 @@ a { color: inherit; }
 /* Signature block (visible on screen and print) */
 .signature-block {
   margin-top: 46px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
 .signature-col {
-  flex: 1;
-  max-width: 220px;
   text-align: center;
-}
-
-.signature-col:first-child {
-  margin-right: auto;
-}
-
-.signature-col:last-child {
-  margin-left: auto;
 }
 
 .signature-line {
   border-top: 1.5px solid var(--color-ink-soft);
-  margin-bottom: 6px;
+  margin: 0 8px 6px;
 }
 
 .signature-label {
@@ -469,16 +459,101 @@ a { color: inherit; }
 
 /* ===== Print ===== */
 @media print {
-  body { background: #fff; }
-  .search-card, .result-actions, .footer, .no-print { display: none !important; }
-  .wrap { max-width: 100%; padding: 0; }
-  .result-card { box-shadow: none; border: 1px solid #999; }
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    background: #fff;
+    background-image: none;
+  }
+
+  .search-card, .result-actions, .footer, .no-print {
+    display: none !important;
+  }
+
+  .wrap {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .letterhead {
+    padding: 0 0 10px;
+    margin-bottom: 12px;
+  }
+
+  .school-logo, .school-logo-fallback {
+    width: 42px;
+    height: 42px;
+  }
+
+  .school-name {
+    font-size: 20px;
+  }
+
+  .exam-tag {
+    margin-top: 6px;
+    padding: 3px 12px;
+  }
+
+  .result-card {
+    box-shadow: none;
+    border: 1px solid #999;
+    padding: 14px 16px 16px;
+  }
+
+  .result-card::before {
+    inset: 4px;
+  }
+
+  .result-top {
+    padding-bottom: 8px;
+  }
+
+  .student-name {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .subject-table {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .subject-table th {
+    padding: 5px 6px;
+  }
+
+  .subject-table td {
+    padding: 5px 6px;
+  }
+
+  .grade-pill {
+    padding: 1px 7px;
+  }
+
+  .summary {
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .summary-box {
+    padding: 7px 8px;
+  }
+
+  .summary-box .value {
+    font-size: 16px;
+  }
+
+  .signature-block {
+    margin-top: 26px;
+  }
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 480px) {
   .result-top { flex-direction: column-reverse; align-items: flex-start; }
-  .seal { align-self: flex-end; }
   .summary { grid-template-columns: 1fr; }
   .subject-table { font-size: 13.5px; }
 }
