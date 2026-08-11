@@ -15,8 +15,8 @@
   --radius-s: 4px;
   --radius-m: 10px;
   --shadow-card: 0 1px 2px rgba(15, 30, 20, 0.06), 0 8px 24px rgba(15, 30, 20, 0.06);
-  --font-display: "Noto Serif Bengali", "Noto Serif", serif;
-  --font-body: "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+  --font-display: "Tiro Bangla", "Noto Serif Bengali", serif;
+  --font-body: "Tiro Bangla", "Noto Serif Bengali", serif;
 }
 
 * { box-sizing: border-box; }
@@ -484,21 +484,21 @@ a { color: inherit; }
 
   .wrap {
     max-width: 100%;
-    padding: 0;
+    padding: 40px 0 0;
   }
 
   .letterhead {
     padding: 0 0 10px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .school-logo, .school-logo-fallback {
-    width: 70px;
-    height: 70px;
+    width: 78px;
+    height: 78px;
   }
 
   .school-name {
-    font-size: 27px;
+    font-size: 29px;
   }
 
   .school-address {
@@ -571,7 +571,7 @@ a { color: inherit; }
   }
 
   .signature-block {
-    margin-top: 50px;
+    margin-top: 40px;
     page-break-inside: avoid;
   }
 }
