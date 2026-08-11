@@ -464,14 +464,18 @@ a { color: inherit; }
     margin: 10mm;
   }
 
+  html, body {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
   body {
     background: #fff;
     background-image: none;
-    min-height: auto;
   }
 
-  html {
-    height: auto;
+  .wrap {
+    min-height: 0 !important;
   }
 
   .search-card, .result-actions, .footer, .no-print {
@@ -484,28 +488,33 @@ a { color: inherit; }
   }
 
   .letterhead {
-    padding: 0 0 10px;
-    margin-bottom: 12px;
+    padding: 0 0 14px;
+    margin-bottom: 18px;
   }
 
   .school-logo, .school-logo-fallback {
-    width: 42px;
-    height: 42px;
+    width: 70px;
+    height: 70px;
   }
 
   .school-name {
-    font-size: 20px;
+    font-size: 28px;
+  }
+
+  .school-address {
+    font-size: 14px;
   }
 
   .exam-tag {
-    margin-top: 6px;
-    padding: 3px 12px;
+    margin-top: 8px;
+    padding: 5px 16px;
+    font-size: 14px;
   }
 
   .result-card {
     box-shadow: none;
     border: 1px solid #999;
-    padding: 14px 16px 16px;
+    padding: 22px 24px 24px;
     page-break-inside: avoid;
   }
 
@@ -514,47 +523,60 @@ a { color: inherit; }
   }
 
   .result-top {
-    padding-bottom: 8px;
+    padding-bottom: 12px;
   }
 
   .student-name {
-    font-size: 18px;
-    margin-bottom: 4px;
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .student-meta {
+    font-size: 15px;
   }
 
   .subject-table {
-    margin-top: 10px;
-    font-size: 13px;
+    margin-top: 16px;
+    font-size: 15px;
   }
 
   .subject-table th {
-    padding: 5px 6px;
+    padding: 9px 8px;
   }
 
   .subject-table td {
-    padding: 5px 6px;
+    padding: 9px 8px;
   }
 
   .grade-pill {
-    padding: 1px 7px;
+    padding: 3px 9px;
+    font-size: 14px;
   }
 
   .summary {
-    margin-top: 10px;
-    gap: 8px;
+    margin-top: 16px;
+    gap: 12px;
   }
 
   .summary-box {
-    padding: 7px 8px;
+    padding: 12px 10px;
+  }
+
+  .summary-box .label {
+    font-size: 13px;
   }
 
   .summary-box .value {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .signature-block {
-    margin-top: 64px;
+    margin-top: 90px;
     page-break-inside: avoid;
+  }
+
+  .signature-label {
+    font-size: 14px;
   }
 }
 
