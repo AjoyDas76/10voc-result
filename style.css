@@ -546,42 +546,42 @@ a { color: inherit; }
   }
 
   .subject-table {
-    margin-top: 6px;
-    font-size: 11.5px;
-  }
-
-  .subject-table th {
-    padding: 3px 5px;
-  }
-
-  .subject-table td {
-    padding: 3px 5px;
-  }
-
-  .grade-pill {
-    padding: 1px 6px;
-    font-size: 11px;
-  }
-
-  .summary {
-    margin-top: 6px;
-    gap: 7px;
-  }
-
-  .summary-box {
-    padding: 5px 7px;
-  }
-
-  .summary-box .label {
-    font-size: 11px;
-  }
-
-  .summary-box .value {
+    margin-top: 10px;
     font-size: 14px;
   }
 
+  .subject-table th {
+    padding: 8px 8px;
+  }
+
+  .subject-table td {
+    padding: 9px 8px;
+  }
+
+  .grade-pill {
+    padding: 3px 9px;
+    font-size: 13px;
+  }
+
+  .summary {
+    margin-top: 10px;
+    gap: 9px;
+  }
+
+  .summary-box {
+    padding: 9px 9px;
+  }
+
+  .summary-box .label {
+    font-size: 12.5px;
+  }
+
+  .summary-box .value {
+    font-size: 18px;
+  }
+
   .signature-block {
-    margin-top: 40px;
+    margin-top: 56px;
     page-break-inside: avoid;
   }
 }
