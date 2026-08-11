@@ -64,7 +64,7 @@ a { color: inherit; }
 .letterhead-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   justify-content: center;
 }
 
@@ -546,42 +546,42 @@ a { color: inherit; }
   }
 
   .subject-table {
-    margin-top: 14px;
-    font-size: 16px;
+    margin-top: 6px;
+    font-size: 12px;
   }
 
   .subject-table th {
-    padding: 11px 9px;
+    padding: 4px 6px;
   }
 
   .subject-table td {
-    padding: 12px 9px;
+    padding: 4px 6px;
   }
 
   .grade-pill {
-    padding: 4px 11px;
-    font-size: 15px;
+    padding: 1px 7px;
+    font-size: 11px;
   }
 
   .summary {
-    margin-top: 14px;
-    gap: 11px;
+    margin-top: 6px;
+    gap: 6px;
   }
 
   .summary-box {
-    padding: 12px 10px;
+    padding: 5px 6px;
   }
 
   .summary-box .label {
-    font-size: 13.5px;
+    font-size: 10.5px;
   }
 
   .summary-box .value {
-    font-size: 21px;
+    font-size: 14px;
   }
 
   .signature-block {
-    margin-top: 64px;
+    margin-top: 28px;
     page-break-inside: avoid;
   }
 }
