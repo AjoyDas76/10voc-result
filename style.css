@@ -489,16 +489,16 @@ a { color: inherit; }
 
   .letterhead {
     padding: 0 0 10px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .school-logo, .school-logo-fallback {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
   }
 
   .school-name {
-    font-size: 23px;
+    font-size: 25px;
   }
 
   .school-address {
@@ -514,7 +514,7 @@ a { color: inherit; }
   .result-card {
     box-shadow: none;
     border: 1px solid #999;
-    padding: 16px 18px 18px;
+    padding: 14px 16px 16px;
     page-break-inside: avoid;
   }
 
@@ -523,50 +523,54 @@ a { color: inherit; }
   }
 
   .result-top {
-    padding-bottom: 9px;
+    padding-bottom: 7px;
   }
 
   .student-name {
-    font-size: 19px;
-    margin-bottom: 5px;
+    font-size: 18px;
+    margin-bottom: 4px;
   }
 
   .student-meta {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .subject-table {
-    margin-top: 11px;
-    font-size: 13.5px;
+    margin-top: 8px;
+    font-size: 12.5px;
   }
 
   .subject-table th {
-    padding: 6px 7px;
+    padding: 4px 6px;
   }
 
   .subject-table td {
-    padding: 6px 7px;
+    padding: 4px 6px;
   }
 
   .grade-pill {
-    padding: 2px 8px;
+    padding: 1px 7px;
   }
 
   .summary {
-    margin-top: 11px;
-    gap: 9px;
+    margin-top: 8px;
+    gap: 8px;
   }
 
   .summary-box {
-    padding: 8px 8px;
+    padding: 6px 8px;
+  }
+
+  .summary-box .label {
+    font-size: 11.5px;
   }
 
   .summary-box .value {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .signature-block {
-    margin-top: 66px;
+    margin-top: 56px;
     page-break-inside: avoid;
   }
 }
