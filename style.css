@@ -64,7 +64,7 @@ a { color: inherit; }
 .letterhead-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   justify-content: center;
 }
 
