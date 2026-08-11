@@ -457,6 +457,16 @@ a { color: inherit; }
   margin-top: 34px;
 }
 
+.footer a {
+  color: var(--color-green-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 /* ===== Print ===== */
 @media print {
   @page {
