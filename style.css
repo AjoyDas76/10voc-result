@@ -467,6 +467,11 @@ a { color: inherit; }
   body {
     background: #fff;
     background-image: none;
+    min-height: auto;
+  }
+
+  html {
+    height: auto;
   }
 
   .search-card, .result-actions, .footer, .no-print {
@@ -501,6 +506,7 @@ a { color: inherit; }
     box-shadow: none;
     border: 1px solid #999;
     padding: 14px 16px 16px;
+    page-break-inside: avoid;
   }
 
   .result-card::before {
@@ -547,7 +553,8 @@ a { color: inherit; }
   }
 
   .signature-block {
-    margin-top: 26px;
+    margin-top: 64px;
+    page-break-inside: avoid;
   }
 }
 
