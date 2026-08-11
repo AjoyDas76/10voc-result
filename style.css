@@ -268,7 +268,7 @@ a { color: inherit; }
 }
 
 .student-name {
-  font-family: var(--font-display);
+  font-family: "Times New Roman", Times, serif;
   font-size: 22px;
   font-weight: 700;
   margin: 0 0 6px;
@@ -455,6 +455,7 @@ a { color: inherit; }
   font-size: 12.5px;
   color: var(--color-ink-soft);
   margin-top: 34px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* ===== Print ===== */
