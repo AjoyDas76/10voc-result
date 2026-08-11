@@ -15,8 +15,8 @@
   --radius-s: 4px;
   --radius-m: 10px;
   --shadow-card: 0 1px 2px rgba(15, 30, 20, 0.06), 0 8px 24px rgba(15, 30, 20, 0.06);
-  --font-display: "Tiro Bangla", "Noto Serif Bengali", serif;
-  --font-body: "Tiro Bangla", "Noto Serif Bengali", serif;
+  --font-display: "Times New Roman", "Tiro Bangla", serif;
+  --font-body: "Times New Roman", "Tiro Bangla", serif;
 }
 
 * { box-sizing: border-box; }
@@ -268,7 +268,7 @@ a { color: inherit; }
 }
 
 .student-name {
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-display);
   font-size: 22px;
   font-weight: 700;
   margin: 0 0 6px;
@@ -455,7 +455,6 @@ a { color: inherit; }
   font-size: 12.5px;
   color: var(--color-ink-soft);
   margin-top: 34px;
-  font-family: "Times New Roman", Times, serif;
 }
 
 /* ===== Print ===== */
