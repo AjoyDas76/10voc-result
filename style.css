@@ -431,7 +431,7 @@ a { color: inherit; }
   margin-top: 46px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 28px;
 }
 
 .signature-col {
