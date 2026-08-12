@@ -349,12 +349,12 @@ a { color: inherit; }
 
 .subject-table th:first-child,
 .subject-table td:first-child {
-  text-align: right;
+  text-align: left;
 }
 
 .subject-table th:not(:first-child),
 .subject-table td:not(:first-child) {
-  text-align: center;
+  text-align: left;
 }
 
 .subject-table td {
