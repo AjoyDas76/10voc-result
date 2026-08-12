@@ -503,12 +503,12 @@ a { color: inherit; }
   }
 
   .school-logo, .school-logo-fallback {
-    width: 92px;
-    height: 92px;
+    width: 70px;
+    height: 70px;
   }
 
   .school-name {
-    font-size: 33px;
+    font-size: 40px;
   }
 
   .school-address {
