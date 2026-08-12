@@ -289,7 +289,7 @@ a { color: inherit; }
 .seal {
   flex-shrink: 0;
   width: 92px;
-  height: 92px;
+  height: 95px;
   border-radius: 50%;
   border: 3px double var(--color-green);
   display: flex;
