@@ -522,7 +522,7 @@ a { color: inherit; }
   }
 
   .result-card {
-    box-shadow: none;
+    box-shadow: black;
     border: 1px solid #999;
     padding: 12px 14px 14px;
     page-break-inside: avoid;
