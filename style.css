@@ -276,7 +276,7 @@ a { color: inherit; }
 }
 
 .student-meta {
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--color-ink-soft);
   display: grid;
   grid-template-columns: auto auto;
