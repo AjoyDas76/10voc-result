@@ -304,7 +304,7 @@ a { color: inherit; }
 .seal::after {
   content: "";
   position: absolute;
-  inset: 6px;
+  inset: 8px;
   border: 1px solid var(--color-gold);
   border-radius: 50%;
 }
