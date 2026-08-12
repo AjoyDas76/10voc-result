@@ -452,7 +452,7 @@ a { color: inherit; }
 /* Footer */
 .footer {
   text-align: center;
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--color-ink-soft);
   margin-top: 34px;
 }
