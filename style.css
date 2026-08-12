@@ -546,42 +546,42 @@ a { color: inherit; }
   }
 
   .subject-table {
-    margin-top: 6px;
-    font-size: 12px;
+    margin-top: 7px;
+    font-size: 13px;
   }
 
   .subject-table th {
-    padding: 4px 6px;
+    padding: 5px 7px;
   }
 
   .subject-table td {
-    padding: 4px 6px;
+    padding: 5px 7px;
   }
 
   .grade-pill {
-    padding: 1px 7px;
-    font-size: 11px;
+    padding: 2px 8px;
+    font-size: 12px;
   }
 
   .summary {
-    margin-top: 6px;
-    gap: 6px;
+    margin-top: 7px;
+    gap: 7px;
   }
 
   .summary-box {
-    padding: 5px 6px;
+    padding: 6px 7px;
   }
 
   .summary-box .label {
-    font-size: 10.5px;
+    font-size: 11px;
   }
 
   .summary-box .value {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .signature-block {
-    margin-top: 28px;
+    margin-top: 32px;
     page-break-inside: avoid;
   }
 }
