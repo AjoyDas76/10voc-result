@@ -340,7 +340,7 @@ a { color: inherit; }
 }
 
 .subject-table th {
-  text-align: right;
+  text-align: left;
   font-weight: 600;
   color: var(--color-green-dark);
   border-bottom: 2px solid var(--color-green);
