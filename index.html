@@ -4,11 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Result Portal</title>
+<meta name="description" content="প্রবর্তক স্কুল এন্ড কলেজ, পাঁচলাইশ, চট্টগ্রাম — ১০ম শ্রেণি (ভোকেশনাল)-এর পরীক্ষার ফলাফল Roll Number দিয়ে অনলাইনে দেখুন। মেধাক্রম ও সম্পূর্ণ মেধাতালিকাসহ।">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="loading-bar no-print" id="loadingBar"></div>
   <div class="wrap">
 
     <header class="letterhead">
@@ -29,6 +32,7 @@
       <label class="search-label" for="examSelect">পরীক্ষা নির্বাচন করুন</label>
       <select id="examSelect" class="exam-select"></select>
       <p class="exam-empty-msg" id="examEmptyMsg">এই পরীক্ষার ফলাফল এখনো প্রকাশিত হয়নি। শীঘ্রই প্রকাশ করা হবে।</p>
+      <p class="exam-loading-msg" id="examLoadingMsg">ফলাফল লোড হচ্ছে...</p>
 
       <label class="search-label" for="rollInput" style="margin-top:16px;">Roll Number দিয়ে ফলাফল খুঁজুন</label>
       <div class="search-row">
@@ -37,6 +41,29 @@
       </div>
       <p class="hint">শুধু Roll Number লিখে Enter চাপুন অথবা "খুঁজুন" বাটনে ক্লিক করুন।</p>
       <div class="error-msg" id="errorMsg"></div>
+
+      <button class="btn btn-outline btn-block no-print" id="meritToggleBtn" style="margin-top:16px;">📋 সম্পূর্ণ মেধাতালিকা দেখুন</button>
+    </section>
+
+    <section class="merit-card no-print" id="meritSection" style="display:none;">
+      <div class="merit-head">
+        <p class="merit-title" id="meritTitle">মেধাতালিকা</p>
+        <button class="merit-close" id="meritCloseBtn" aria-label="বন্ধ করুন">✕</button>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="subject-table merit-table">
+          <thead>
+            <tr>
+              <th>মেধাক্রম</th>
+              <th>Roll</th>
+              <th>নাম</th>
+              <th>GPA</th>
+              <th>ফলাফল</th>
+            </tr>
+          </thead>
+          <tbody id="meritRows"></tbody>
+        </table>
+      </div>
     </section>
 
     <section class="result-card" id="resultCard">
@@ -47,6 +74,7 @@
             <span>Roll:</span><b id="metaRoll"></b>
             <span>শ্রেণি:</span><b id="metaClass"></b>
             <span>GPA:</span><b id="metaGPA"></b>
+            <span>মেধাক্রম:</span><b id="metaRank"></b>
           </div>
         </div>
       </div>
@@ -93,6 +121,7 @@
       </div>
 
       <div class="result-actions no-print">
+        <button class="btn btn-outline" id="shareBtn">📤 শেয়ার করুন</button>
         <button class="btn btn-outline" id="printBtn">🖨️ Result Print করুন</button>
       </div>
     </section>
