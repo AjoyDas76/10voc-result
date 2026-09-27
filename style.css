@@ -163,8 +163,14 @@ a { color: inherit; }
   gap: 10px;
 }
 
+.search-row .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 #rollInput {
   flex: 1;
+  min-width: 0;
   font-family: var(--font-body);
   font-size: 17px;
   padding: 12px 14px;
@@ -612,4 +618,5 @@ a { color: inherit; }
   .result-top { flex-direction: column-reverse; align-items: flex-start; }
   .summary { grid-template-columns: 1fr; }
   .subject-table { font-size: 13.5px; }
+  .search-row .btn { padding: 12px 16px; }
 }
