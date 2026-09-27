@@ -219,6 +219,30 @@ a { color: inherit; }
   border-radius: var(--radius-s);
 }
 
+.exam-loading-msg {
+  display: none;
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+.exam-loading-msg.active {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exam-loading-msg.active::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  border: 2px solid rgba(11, 94, 60, 0.25);
+  border-top-color: var(--color-green);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
 .btn {
   font-family: var(--font-body);
   font-size: 16px;
@@ -231,6 +255,9 @@ a { color: inherit; }
 }
 
 .btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+.btn-block { width: 100%; }
 
 .btn-primary {
   background: var(--color-green);
@@ -451,6 +478,8 @@ a { color: inherit; }
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* Signature block (visible on screen and print) */
@@ -611,6 +640,81 @@ a { color: inherit; }
     margin-top: 58px;
     page-break-inside: avoid;
   }
+}
+
+/* ===== Loading bar ===== */
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-green);
+  transform: scaleX(0.05);
+  transform-origin: left;
+  opacity: 0;
+  z-index: 999;
+  transition: opacity 0.2s ease;
+}
+
+.loading-bar.active {
+  opacity: 1;
+  animation: loadingPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0% { transform: scaleX(0.06); }
+  50% { transform: scaleX(0.65); }
+  100% { transform: scaleX(0.95); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Merit list ===== */
+.merit-card {
+  background: var(--color-paper);
+  border: var(--line);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.merit-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.merit-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-green-dark);
+}
+
+.merit-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.merit-table th, .merit-table td {
+  text-align: left;
+}
+
+.merit-table td:first-child, .merit-table th:first-child { width: 44px; }
+
+.merit-table tr.self-row td {
+  background: var(--color-pass-bg);
+  font-weight: 700;
 }
 
 /* ===== Responsive ===== */
