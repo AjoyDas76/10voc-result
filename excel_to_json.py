@@ -195,18 +195,33 @@ def main():
         print("Could not detect subject headers — check the sheet layout.")
         sys.exit(1)
 
+    warnings = []  # collected admin-facing warnings, printed as a summary at the end
+
     # pre-parse grade formula rules per subject (from the first data row)
     subj_rules = {}
     for subj_name, total_col, obtained_col, grade_col in subjects:
-        subj_rules[subj_name] = parse_grade_rules(ws, first_data_row, grade_col)
+        rules = parse_grade_rules(ws, first_data_row, grade_col)
+        subj_rules[subj_name] = rules
+        if not rules:
+            warnings.append(
+                f"বিষয় '{subj_name}': গ্রেড কলামে কোনো IF-ফর্মুলা পাওয়া যায়নি, তাই ডিফল্ট গ্রেডিং টেবিল ব্যবহার হয়েছে — "
+                f"এই বিষয়ের পাস/গ্রেড সীমা যাচাই করে নিন।"
+            )
 
     roll_lookup = None
     if not roll_col and args.roll_file:
         roll_lookup = load_roll_map(args.roll_file, args.roll_sheet)
+    if not roll_col and not roll_lookup:
+        warnings.append(
+            "শিটে কোনো Roll কলাম পাওয়া যায়নি এবং কোনো --roll-file দেওয়া হয়নি — তাই সারি অনুযায়ী "
+            "স্বয়ংক্রিয়ভাবে (1, 2, 3...) Roll বসানো হয়েছে। এটা প্রকৃত Roll Number না-ও মিলতে পারে।"
+        )
 
     students = []
     auto_roll = 1
     roll_idx = 0
+    blank_mark_counts = {subj_name: 0 for subj_name, *_ in subjects}
+    blank_total_subjects = set()
     for row in range(first_data_row, ws.max_row + 1):
         name = ws.cell(row=row, column=name_col).value
         if name is None or str(name).strip() == "":
@@ -219,7 +234,10 @@ def main():
         elif roll_lookup and roll_idx < len(roll_lookup):
             r_roll, r_name = roll_lookup[roll_idx]
             if r_name != name:
-                print(f"WARNING: row {row} name '{name}' != roster name '{r_name}' at position {roll_idx}; using roster roll anyway.")
+                warnings.append(
+                    f"সারি {row}: শিটের নাম '{name}' রোস্টারের নাম '{r_name}' (অবস্থান {roll_idx}) থেকে আলাদা — "
+                    f"তবুও রোস্টারের Roll ব্যবহার করা হয়েছে, একবার মিলিয়ে দেখুন।"
+                )
             roll = r_roll
         else:
             roll = str(auto_roll)
@@ -231,6 +249,10 @@ def main():
             obtained = ws.cell(row=row, column=obtained_col).value
             total = total if isinstance(total, (int, float)) else 0
             obtained = obtained if isinstance(obtained, (int, float)) else None
+            if obtained is None:
+                blank_mark_counts[subj_name] += 1
+            if total == 0:
+                blank_total_subjects.add(subj_name)
             grade = eval_grade(subj_rules.get(subj_name), obtained, total)
             subj_rows.append({
                 "name": subj_name,
@@ -247,6 +269,32 @@ def main():
             "subjects": subj_rows
         })
         auto_roll += 1
+
+    # --- admin checks: run after all rows are read ---
+
+    # 1) duplicate roll numbers
+    roll_to_names = {}
+    for s in students:
+        roll_to_names.setdefault(s["roll"], []).append(s["name"])
+    for roll, names in roll_to_names.items():
+        if len(names) > 1:
+            warnings.append(f"ডুপ্লিকেট Roll '{roll}': {', '.join(names)} — একই Roll একাধিক শিক্ষার্থীর নামে ব্যবহৃত হয়েছে।")
+
+    # 2) subjects where a total number of marks was never set (whole column looks unconfigured)
+    for subj_name in blank_total_subjects:
+        warnings.append(f"বিষয় '{subj_name}': 'মোট নম্বর' কলামে কোনো মান পাওয়া যায়নি (0 ধরা হয়েছে) — কলাম ম্যাপিং যাচাই করুন।")
+
+    # 3) subjects with a lot of blank obtained-marks cells
+    for subj_name, blanks in blank_mark_counts.items():
+        if blanks > 0:
+            warnings.append(
+                f"বিষয় '{subj_name}': {blanks} জন শিক্ষার্থীর 'প্রাপ্ত নম্বর' খালি পাওয়া গেছে (0 ধরে গ্রেড হিসাব হয়েছে) — "
+                f"ইচ্ছাকৃত না হলে শিট আবার দেখুন।"
+            )
+
+    # 4) no students detected at all
+    if not students:
+        warnings.append("কোনো শিক্ষার্থীর ডেটা পাওয়া যায়নি — 'নাম' কলামের নিচের সারিগুলো ফাঁকা কিনা যাচাই করুন।")
 
     exam_label = args.exam_label or exam_name or args.exam_id
     exam_class_full = f"{exam_class} শ্রেণি" + (f" ({section})" if section else "")
@@ -304,6 +352,14 @@ def main():
     print(f"Updated index -> {args.index}")
     print(f"Roll source: {'sheet column' if roll_col else ('roster file' if roll_lookup else 'auto-numbered')}")
     print(f"Subjects detected: {[s[0] for s in subjects]}")
+
+    print()
+    if warnings:
+        print(f"⚠️  {len(warnings)}টা সতর্কতা পাওয়া গেছে — ওয়েবসাইটে আপলোডের আগে যাচাই করে নিন:")
+        for i, w in enumerate(warnings, 1):
+            print(f"  {i}. {w}")
+    else:
+        print("✅ কোনো সমস্যা পাওয়া যায়নি — ডেটা যাচাই সম্পন্ন।")
 
 
 if __name__ == "__main__":
