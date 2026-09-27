@@ -15,7 +15,16 @@ let currentExamId = null;
 
 const el = (id) => document.getElementById(id);
 
+function showLoading() {
+  el("loadingBar").classList.add("active");
+}
+
+function hideLoading() {
+  el("loadingBar").classList.remove("active");
+}
+
 async function loadData() {
+  showLoading();
   try {
     const res = await fetch("exams.json", { cache: "no-store" });
     if (!res.ok) throw new Error("exams.json fetch failed");
@@ -25,13 +34,16 @@ async function loadData() {
   } catch (err) {
     console.error(err);
     showError("রেজাল্ট ডেটা লোড করা যায়নি। exams.json ফাইলটি ঠিক আছে কিনা যাচাই করুন।");
+  } finally {
+    hideLoading();
   }
 }
 
 // Fetches results/<id>.json the first time an exam is selected, then caches it.
-async function loadExamStudents(examMeta) {
+async function loadExamStudents(examMeta, { silent } = {}) {
   if (examCache[examMeta.id]) return examCache[examMeta.id];
   if (!examMeta.file) return null;
+  if (!silent) showLoading();
   try {
     const res = await fetch(examMeta.file, { cache: "no-store" });
     if (!res.ok) throw new Error(`${examMeta.file} fetch failed`);
@@ -41,6 +53,8 @@ async function loadExamStudents(examMeta) {
   } catch (err) {
     console.error(err);
     return null;
+  } finally {
+    if (!silent) hideLoading();
   }
 }
 
@@ -104,6 +118,7 @@ async function onExamChange() {
   hideError();
   el("resultCard").style.display = "none";
   el("rollInput").value = "";
+  hideMeritList();
 
   const examMeta = getCurrentExamMeta();
   const examTag = el("examTag");
@@ -114,8 +129,13 @@ async function onExamChange() {
   emptyMsg.style.display = hasData ? "none" : "block";
 
   // pre-fetch this exam's result file in the background so the search feels instant
-  if (examMeta && hasData) {
-    loadExamStudents(examMeta);
+  const loadingMsg = el("examLoadingMsg");
+  if (examMeta && hasData && !examCache[examMeta.id]) {
+    loadingMsg.classList.add("active");
+    await loadExamStudents(examMeta, { silent: true });
+    loadingMsg.classList.remove("active");
+  } else {
+    loadingMsg.classList.remove("active");
   }
 }
 
@@ -165,8 +185,37 @@ function calcResult(student) {
   };
 }
 
-function renderResult(student) {
+// Ranks students within an exam by GPA (passed students only; ties share a rank).
+// Returns a Map of roll -> { rank, totalPassed, totalStudents }.
+function computeRanks(students) {
+  const withResult = students.map((s) => ({ student: s, r: calcResult(s) }));
+  const passed = withResult
+    .filter((x) => x.r.pass)
+    .sort((a, b) => parseFloat(b.r.gpa) - parseFloat(a.r.gpa));
+
+  const rankMap = new Map();
+  let rank = 0;
+  let prevGpa = null;
+  let position = 0;
+  passed.forEach((x) => {
+    position++;
+    if (x.r.gpa !== prevGpa) {
+      rank = position;
+      prevGpa = x.r.gpa;
+    }
+    rankMap.set(String(x.student.roll).trim(), rank);
+  });
+
+  return { rankMap, totalPassed: passed.length, totalStudents: students.length };
+}
+
+let lastRenderedStudent = null;
+let lastRenderedExamMeta = null;
+
+function renderResult(student, exam, examMeta) {
   const r = calcResult(student);
+  lastRenderedStudent = student;
+  lastRenderedExamMeta = examMeta;
 
   el("studentName").textContent = student.name;
   el("metaRoll").textContent = student.roll;
@@ -174,6 +223,15 @@ function renderResult(student) {
   const metaGPA = el("metaGPA");
   metaGPA.textContent = r.gpa;
   metaGPA.className = r.pass ? "status-pass" : "status-fail";
+
+  const metaRank = el("metaRank");
+  if (r.pass && Array.isArray(exam.students)) {
+    const { rankMap, totalPassed } = computeRanks(exam.students);
+    const rank = rankMap.get(String(student.roll).trim());
+    metaRank.textContent = rank ? `${rank} / ${totalPassed} জনের মধ্যে` : "-";
+  } else {
+    metaRank.textContent = "প্রযোজ্য নয়";
+  }
 
   const tbody = el("subjectRows");
   tbody.innerHTML = "";
@@ -238,9 +296,12 @@ async function search() {
   }
 
   const searchBtn = el("searchBtn");
+  const originalBtnText = searchBtn.textContent;
   searchBtn.disabled = true;
+  searchBtn.textContent = "খুঁজছি...";
   const exam = await loadExamStudents(examMeta);
   searchBtn.disabled = false;
+  searchBtn.textContent = originalBtnText;
 
   if (!exam || !Array.isArray(exam.students) || exam.students.length === 0) {
     showError("এই পরীক্ষার ফলাফল লোড করা যায়নি। ইন্টারনেট সংযোগ যাচাই করে আবার চেষ্টা করুন।");
@@ -253,7 +314,105 @@ async function search() {
     return;
   }
 
-  renderResult(student);
+  renderResult(student, exam, examMeta);
+}
+
+// ===== Share result =====
+async function shareResult() {
+  if (!lastRenderedStudent) return;
+  const r = calcResult(lastRenderedStudent);
+  const examLabel = lastRenderedExamMeta ? lastRenderedExamMeta.label : "";
+  const lines = [
+    examLabel,
+    `${lastRenderedStudent.name} (Roll: ${lastRenderedStudent.roll})`,
+    `GPA: ${r.gpa} — ${r.pass ? "উত্তীর্ণ" : "অনুত্তীর্ণ"}`,
+    location.href.split("?")[0].split("#")[0]
+  ].filter(Boolean);
+  const text = lines.join("\n");
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: "রেজাল্ট", text });
+    } catch (err) {
+      // user cancelled the native share sheet — nothing to do
+    }
+    return;
+  }
+
+  const waUrl = "https://wa.me/?text=" + encodeURIComponent(text);
+  window.open(waUrl, "_blank", "noopener");
+}
+
+// ===== Merit list (full class result sheet) =====
+function hideMeritList() {
+  el("meritSection").style.display = "none";
+  el("meritToggleBtn").textContent = "📋 সম্পূর্ণ মেধাতালিকা দেখুন";
+}
+
+async function toggleMeritList() {
+  const section = el("meritSection");
+  const btn = el("meritToggleBtn");
+
+  if (section.style.display !== "none") {
+    hideMeritList();
+    return;
+  }
+
+  const examMeta = getCurrentExamMeta();
+  if (!examMeta || !(examMeta.studentCount > 0)) {
+    showError("এই পরীক্ষার ফলাফল এখনো প্রকাশিত হয়নি।");
+    return;
+  }
+
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "লোড হচ্ছে...";
+  const exam = await loadExamStudents(examMeta);
+  btn.disabled = false;
+
+  if (!exam || !Array.isArray(exam.students) || exam.students.length === 0) {
+    btn.textContent = originalText;
+    showError("মেধাতালিকা লোড করা যায়নি। ইন্টারনেট সংযোগ যাচাই করে আবার চেষ্টা করুন।");
+    return;
+  }
+
+  renderMeritList(exam, examMeta);
+  btn.textContent = "🔼 মেধাতালিকা বন্ধ করুন";
+  section.style.display = "block";
+  section.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function renderMeritList(exam, examMeta) {
+  const { rankMap } = computeRanks(exam.students);
+
+  const rowsData = exam.students.map((s) => {
+    const r = calcResult(s);
+    const rank = r.pass ? rankMap.get(String(s.roll).trim()) : null;
+    return { student: s, r, rank };
+  });
+
+  // passed students first (by rank), then failed students (by roll)
+  rowsData.sort((a, b) => {
+    if (a.r.pass !== b.r.pass) return a.r.pass ? -1 : 1;
+    if (a.r.pass) return a.rank - b.rank;
+    return String(a.student.roll).localeCompare(String(b.student.roll), "en", { numeric: true });
+  });
+
+  el("meritTitle").textContent = `মেধাতালিকা — ${examMeta.label || ""}`;
+
+  const tbody = el("meritRows");
+  tbody.innerHTML = "";
+  rowsData.forEach(({ student, r, rank }) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${rank !== null ? rank : "—"}</td>
+      <td>${escapeHtml(student.roll)}</td>
+      <td>${escapeHtml(student.name)}</td>
+      <td class="${r.pass ? "status-pass" : "status-fail"}">${r.gpa}</td>
+      <td class="${r.pass ? "status-pass" : "status-fail"}">${r.pass ? "উত্তীর্ণ" : "অনুত্তীর্ণ"}</td>
+    `;
+    tbody.appendChild(tr);
+  });
 }
 
 el("searchBtn").addEventListener("click", search);
@@ -261,5 +420,8 @@ el("rollInput").addEventListener("keydown", (e) => {
   if (e.key === "Enter") search();
 });
 el("printBtn").addEventListener("click", () => window.print());
+el("shareBtn").addEventListener("click", shareResult);
+el("meritToggleBtn").addEventListener("click", toggleMeritList);
+el("meritCloseBtn").addEventListener("click", hideMeritList);
 
 loadData();
