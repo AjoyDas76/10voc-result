@@ -158,25 +158,30 @@ def load_roll_map(path, sheet_name):
     return pairs
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("input")
-    ap.add_argument("--sheet")
-    ap.add_argument("--roll-file")
-    ap.add_argument("--roll-sheet")
-    ap.add_argument("--exam-name", default=None)
-    ap.add_argument("--exam-class", default=None)
-    ap.add_argument("--section", default=None)
-    ap.add_argument("--exam-id", required=True, help="stable id for this exam, e.g. first_assessment")
-    ap.add_argument("--exam-label", default=None, help="text shown in the dropdown, defaults to --exam-name")
-    ap.add_argument("--school-name", default="প্রবর্তক স্কুল এন্ড কলেজ")
-    ap.add_argument("--school-address", default="পাঁচলাইশ, চট্টগ্রাম")
-    ap.add_argument("--results-dir", default="results", help="folder that holds each exam's own JSON file")
-    ap.add_argument("--index", default="exams.json", help="the index file the website loads first")
-    args = ap.parse_args()
-
-    wb = openpyxl.load_workbook(args.input, data_only=False)
-    ws = find_best_sheet(wb, args.sheet)
+def convert_exam(
+    input_path,
+    exam_id,
+    sheet=None,
+    roll_file=None,
+    roll_sheet=None,
+    exam_name=None,
+    exam_class=None,
+    section=None,
+    exam_label=None,
+    exam_class_full=None,
+    school_name="প্রবর্তক স্কুল এন্ড কলেজ",
+    school_address="পাঁচলাইশ, চট্টগ্রাম",
+    results_dir="results",
+    index_path="exams.json",
+):
+    """
+    Core conversion logic, reusable from both the CLI (main(), below) and
+    scripts/sync_marks.py (the GitHub Actions entry point). Reads
+    `input_path`, writes `results_dir/<exam_id>.json` and updates
+    `index_path`. Returns a report dict describing what happened.
+    """
+    wb = openpyxl.load_workbook(input_path, data_only=False)
+    ws = find_best_sheet(wb, sheet)
 
     title_cell = ""
     for c in range(1, 4):
@@ -184,11 +189,11 @@ def main():
         if v:
             title_cell = str(v)
             break
-    exam_name = args.exam_name or title_cell.split("ফলাফল")[0].strip()
+    exam_name = exam_name or title_cell.split("ফলাফল")[0].strip()
     m_class = re.search(r"শ্রেণিঃ\s*([^\s]+)", title_cell)
     m_sec = re.search(r"শাখাঃ\s*(.+)", title_cell)
-    exam_class = args.exam_class or (m_class.group(1).strip() if m_class else "")
-    section = args.section or (re.sub(r"\s+", " ", m_sec.group(1).strip()) if m_sec else "")
+    exam_class = exam_class or (m_class.group(1).strip() if m_class else "")
+    section = section or (re.sub(r"\s+", " ", m_sec.group(1).strip()) if m_sec else "")
 
     roll_col, name_col, first_data_row, subjects = find_layout(ws)
     if not subjects:
@@ -209,8 +214,8 @@ def main():
             )
 
     roll_lookup = None
-    if not roll_col and args.roll_file:
-        roll_lookup = load_roll_map(args.roll_file, args.roll_sheet)
+    if not roll_col and roll_file:
+        roll_lookup = load_roll_map(roll_file, roll_sheet)
     if not roll_col and not roll_lookup:
         warnings.append(
             "শিটে কোনো Roll কলাম পাওয়া যায়নি এবং কোনো --roll-file দেওয়া হয়নি — তাই সারি অনুযায়ী "
@@ -296,14 +301,18 @@ def main():
     if not students:
         warnings.append("কোনো শিক্ষার্থীর ডেটা পাওয়া যায়নি — 'নাম' কলামের নিচের সারিগুলো ফাঁকা কিনা যাচাই করুন।")
 
-    exam_label = args.exam_label or exam_name or args.exam_id
-    exam_class_full = f"{exam_class} শ্রেণি" + (f" ({section})" if section else "")
+    exam_label = exam_label or exam_name or exam_id
+    # exam_class_full lets a caller (e.g. scripts/sync_marks.py, reusing an
+    # existing exams.json entry) pass the already-formatted class string
+    # directly, instead of having it rebuilt from exam_class + section.
+    if not exam_class_full:
+        exam_class_full = f"{exam_class} শ্রেণি" + (f" ({section})" if section else "")
 
     # --- 1) write this exam's OWN file: results/<exam-id>.json ---
-    os.makedirs(args.results_dir, exist_ok=True)
-    exam_file_rel = f"{args.results_dir}/{args.exam_id}.json"
+    os.makedirs(results_dir, exist_ok=True)
+    exam_file_rel = f"{results_dir}/{exam_id}.json"
     exam_file_data = {
-        "id": args.exam_id,
+        "id": exam_id,
         "label": exam_label,
         "examClass": exam_class_full,
         "students": students
@@ -313,7 +322,7 @@ def main():
 
     # --- 2) update (or create) the index file, touching only this exam's entry ---
     try:
-        with open(args.index, "r", encoding="utf-8") as f:
+        with open(index_path, "r", encoding="utf-8") as f:
             index_data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         index_data = None
@@ -321,45 +330,95 @@ def main():
     if not index_data or "exams" not in index_data:
         index_data = {
             "school": {
-                "name": args.school_name,
-                "address": args.school_address,
+                "name": school_name,
+                "address": school_address,
                 "logo": "logo.png"
             },
             "exams": []
         }
     else:
-        index_data["school"]["name"] = args.school_name or index_data["school"].get("name")
-        index_data["school"]["address"] = args.school_address or index_data["school"].get("address")
+        index_data["school"]["name"] = school_name or index_data["school"].get("name")
+        index_data["school"]["address"] = school_address or index_data["school"].get("address")
 
     index_entry = {
-        "id": args.exam_id,
+        "id": exam_id,
         "label": exam_label,
         "examClass": exam_class_full,
         "file": exam_file_rel,
         "studentCount": len(students)
     }
     exams_index = index_data["exams"]
-    idx = next((i for i, e in enumerate(exams_index) if e["id"] == args.exam_id), None)
+    idx = next((i for i, e in enumerate(exams_index) if e["id"] == exam_id), None)
     if idx is not None:
         exams_index[idx] = index_entry
     else:
         exams_index.append(index_entry)
 
-    with open(args.index, "w", encoding="utf-8") as f:
+    with open(index_path, "w", encoding="utf-8") as f:
         json.dump(index_data, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {len(students)} students -> {exam_file_rel}")
-    print(f"Updated index -> {args.index}")
-    print(f"Roll source: {'sheet column' if roll_col else ('roster file' if roll_lookup else 'auto-numbered')}")
-    print(f"Subjects detected: {[s[0] for s in subjects]}")
+    return {
+        "exam_id": exam_id,
+        "exam_label": exam_label,
+        "exam_class_full": exam_class_full,
+        "exam_file_rel": exam_file_rel,
+        "index_path": index_path,
+        "student_count": len(students),
+        "roll_source": "sheet column" if roll_col else ("roster file" if roll_lookup else "auto-numbered"),
+        "subjects": [s[0] for s in subjects],
+        "warnings": warnings,
+    }
+
+
+def print_report(report):
+    print(f"Wrote {report['student_count']} students -> {report['exam_file_rel']}")
+    print(f"Updated index -> {report['index_path']}")
+    print(f"Roll source: {report['roll_source']}")
+    print(f"Subjects detected: {report['subjects']}")
 
     print()
+    warnings = report["warnings"]
     if warnings:
         print(f"⚠️  {len(warnings)}টা সতর্কতা পাওয়া গেছে — ওয়েবসাইটে আপলোডের আগে যাচাই করে নিন:")
         for i, w in enumerate(warnings, 1):
             print(f"  {i}. {w}")
     else:
         print("✅ কোনো সমস্যা পাওয়া যায়নি — ডেটা যাচাই সম্পন্ন।")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("input")
+    ap.add_argument("--sheet")
+    ap.add_argument("--roll-file")
+    ap.add_argument("--roll-sheet")
+    ap.add_argument("--exam-name", default=None)
+    ap.add_argument("--exam-class", default=None)
+    ap.add_argument("--section", default=None)
+    ap.add_argument("--exam-id", required=True, help="stable id for this exam, e.g. first_assessment")
+    ap.add_argument("--exam-label", default=None, help="text shown in the dropdown, defaults to --exam-name")
+    ap.add_argument("--school-name", default="প্রবর্তক স্কুল এন্ড কলেজ")
+    ap.add_argument("--school-address", default="পাঁচলাইশ, চট্টগ্রাম")
+    ap.add_argument("--results-dir", default="results", help="folder that holds each exam's own JSON file")
+    ap.add_argument("--index", default="exams.json", help="the index file the website loads first")
+    args = ap.parse_args()
+
+    report = convert_exam(
+        args.input,
+        args.exam_id,
+        sheet=args.sheet,
+        roll_file=args.roll_file,
+        roll_sheet=args.roll_sheet,
+        exam_name=args.exam_name,
+        exam_class=args.exam_class,
+        section=args.section,
+        exam_label=args.exam_label,
+        school_name=args.school_name,
+        school_address=args.school_address,
+        results_dir=args.results_dir,
+        index_path=args.index,
+    )
+    print_report(report)
 
 
 if __name__ == "__main__":
