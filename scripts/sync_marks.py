@@ -79,6 +79,29 @@ def resolve_exam_meta(exam_id, existing_entry):
     return exam_id, class_full, [warning]
 
 
+def apply_publish_at(exam_id):
+    """marks/<exam-id>.meta.json-এ "publishAt" থাকলে সেটা exams.json-এ বসায়।
+    (মুছে দিলে বা "" দিলে exams.json থেকেও সরে যায় — মানে সাথে সাথে প্রকাশ।)"""
+    meta_path = os.path.join(MARKS_DIR, f"{exam_id}.meta.json")
+    if not os.path.exists(meta_path):
+        return
+    with open(meta_path, "r", encoding="utf-8") as f:
+        meta = json.load(f)
+    if "publishAt" not in meta:
+        return
+    with open(INDEX_PATH, "r", encoding="utf-8") as f:
+        index_data = json.load(f)
+    entry = find_existing_entry(index_data, exam_id)
+    if not entry:
+        return
+    if meta["publishAt"]:
+        entry["publishAt"] = meta["publishAt"]
+    else:
+        entry.pop("publishAt", None)
+    with open(INDEX_PATH, "w", encoding="utf-8") as f:
+        json.dump(index_data, f, ensure_ascii=False, indent=2)
+
+
 def main():
     xlsx_files = sorted(glob.glob(os.path.join(MARKS_DIR, "*.xlsx")))
     if not xlsx_files:
@@ -107,6 +130,8 @@ def main():
             print(f"❌ '{path}' প্রসেস করা যায়নি: {err}")
             any_errors = True
             continue
+
+        apply_publish_at(exam_id)
 
         report["warnings"] = meta_warnings + report["warnings"]
         excel_to_json.print_report(report)
