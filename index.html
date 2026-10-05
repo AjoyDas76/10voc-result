@@ -49,6 +49,13 @@
   <div class="wrap">
     <img class="print-watermark" src="logo.png" alt="" aria-hidden="true">
 
+    <!-- পরবর্তী ফলাফল প্রকাশের কাউন্টডাউন ব্যানার (script.js নিজে থেকে দেখায়/লুকায়) -->
+    <div class="countdown-banner no-print" id="countdownBanner" role="status" hidden>
+      <span class="cb-dot" aria-hidden="true"></span>
+      <span class="cb-text"><span id="cbLabel"></span> ফলাফল আসছে:</span>
+      <b class="cb-time" id="cbTime"></b>
+    </div>
+
     <header class="letterhead">
       <button class="theme-btn no-print" id="themeBtn" type="button" aria-label="ডার্ক / লাইট মোড বদলান" title="ডার্ক / লাইট মোড">🌙</button>
       <div class="letterhead-inner">
