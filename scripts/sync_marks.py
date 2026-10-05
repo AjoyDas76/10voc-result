@@ -40,6 +40,39 @@ DEFAULT_CLASS = "১০ম"
 DEFAULT_SECTION = "ভোকেশনাল"
 
 
+def load_meta(meta_path):
+    """meta.json পড়ে। ফরম্যাটে ভুল (যেমন কমা বাদ) থাকলে পরিষ্কার বাংলা বার্তা দিয়ে থামে।"""
+    try:
+        with open(meta_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except json.JSONDecodeError as err:
+        print(
+            f"❌ {meta_path} ফাইলের লেখায় ভুল আছে: লাইন {err.lineno}, কলাম {err.colno} — {err.msg}\n"
+            f"   টিপস: প্রতিটি লাইনের শেষে কমা (,) লাগবে — শুধু শেষ লাইনে লাগবে না। "
+            f"সব লেখা \" \" (ডাবল কোটেশন) এর ভেতরে থাকতে হবে।"
+        )
+        sys.exit(1)
+
+
+def check_publish_at(value, meta_path):
+    """publishAt ঠিক ফরম্যাটে আছে কিনা দেখে। ভুল হলে থামে।"""
+    from datetime import datetime
+    try:
+        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except (ValueError, AttributeError):
+        print(
+            f"❌ {meta_path}-এ publishAt ঠিক নেই: {value!r}\n"
+            f'   সঠিক ফরম্যাট: "2026-10-20T10:00:00+06:00"'
+        )
+        sys.exit(1)
+    if dt.tzinfo is None:
+        print(
+            f"❌ {meta_path}-এ publishAt-এর শেষে সময় অঞ্চল (+06:00) নেই: {value!r}\n"
+            f'   সঠিক ফরম্যাট: "2026-10-20T10:00:00+06:00"'
+        )
+        sys.exit(1)
+
+
 def load_existing_index():
     try:
         with open(INDEX_PATH, "r", encoding="utf-8") as f:
@@ -58,8 +91,7 @@ def resolve_exam_meta(exam_id, existing_entry):
     """Returns (label, class_full, warnings) for this exam id."""
     meta_path = os.path.join(MARKS_DIR, f"{exam_id}.meta.json")
     if os.path.exists(meta_path):
-        with open(meta_path, "r", encoding="utf-8") as f:
-            meta = json.load(f)
+        meta = load_meta(meta_path)
         label = meta.get("label") or exam_id
         klass = meta.get("class", DEFAULT_CLASS)
         section = meta.get("section", "")
@@ -85,10 +117,11 @@ def apply_publish_at(exam_id):
     meta_path = os.path.join(MARKS_DIR, f"{exam_id}.meta.json")
     if not os.path.exists(meta_path):
         return
-    with open(meta_path, "r", encoding="utf-8") as f:
-        meta = json.load(f)
+    meta = load_meta(meta_path)
     if "publishAt" not in meta:
         return
+    if meta["publishAt"]:
+        check_publish_at(meta["publishAt"], meta_path)
     with open(INDEX_PATH, "r", encoding="utf-8") as f:
         index_data = json.load(f)
     entry = find_existing_entry(index_data, exam_id)
