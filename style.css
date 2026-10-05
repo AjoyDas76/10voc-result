@@ -120,6 +120,9 @@ body {
   -webkit-print-color-adjust: exact;
 }
 
+/* প্রিন্টের জন্য জলছাপ (img হিসেবে, যাতে PDF-এ ব্যাকগ্রাউন্ড গ্রাফিক্স বন্ধ থাকলেও আসে) */
+.print-watermark { display: none; }
+
 a { color: inherit; }
 
 .table-scroll {
@@ -686,6 +689,27 @@ a { color: inherit; }
     display: none !important;
   }
 
+  /* জলছাপ: পেজের মাঝখানে, সব কনটেন্টের পেছনে */
+  .wrap::before { display: none !important; }
+
+  .print-watermark {
+    display: block !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 130mm;
+    height: auto;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* কার্ডের সাদা ব্যাকগ্রাউন্ড জলছাপ ঢেকে দিচ্ছিল */
+  .result-card {
+    background: transparent !important;
+  }
+
   .wrap {
     max-width: 100%;
     padding: 12px 0 0;
@@ -789,6 +813,60 @@ a { color: inherit; }
     page-break-inside: avoid;
   }
 }
+
+
+/* ===== "ফলাফল প্রকাশিত হয়নি" পপআপ ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(10, 20, 15, 0.55);
+}
+.modal-backdrop[hidden] { display: none; }
+
+.modal-box {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: var(--line);
+  border-top: 5px solid var(--color-green);
+  border-radius: var(--radius-m);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  padding: 26px 22px 22px;
+  text-align: center;
+}
+
+.modal-icon { font-size: 40px; line-height: 1; margin-bottom: 8px; }
+
+.modal-title {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: var(--color-green-dark);
+}
+
+.modal-text {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+.modal-countdown {
+  margin: 0 0 18px;
+  padding: 10px 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-green-dark);
+  background: var(--color-pass-bg);
+  border-radius: var(--radius-s);
+}
+
+@media print { .modal-backdrop { display: none !important; } }
 
 /* ===== Loading bar ===== */
 .loading-bar {
