@@ -47,6 +47,7 @@
 <body>
   <div class="loading-bar no-print" id="loadingBar"></div>
   <div class="wrap">
+    <img class="print-watermark" src="logo.png" alt="" aria-hidden="true">
 
     <header class="letterhead">
       <button class="theme-btn no-print" id="themeBtn" type="button" aria-label="ডার্ক / লাইট মোড বদলান" title="ডার্ক / লাইট মোড">🌙</button>
@@ -212,6 +213,16 @@
     </div>
 
     <p class="footer no-print">Developed by <a href="https://www.facebook.com/ajoy.kaptai" target="_blank" rel="noopener">Ajoy Das</a></p>
+  </div>
+
+  <div class="modal-backdrop no-print" id="lockedModal" role="dialog" aria-modal="true" aria-labelledby="lockedTitle" hidden>
+    <div class="modal-box">
+      <div class="modal-icon" aria-hidden="true">🔒</div>
+      <h2 class="modal-title" id="lockedTitle">ফলাফল প্রকাশিত হয়নি</h2>
+      <p class="modal-text" id="lockedText"></p>
+      <div class="modal-countdown" id="lockedCountdown" aria-live="off"></div>
+      <button class="btn btn-primary" id="lockedCloseBtn" type="button">ঠিক আছে</button>
+    </div>
   </div>
 
   <div class="toast no-print" id="toast" role="status" aria-live="polite"></div>
