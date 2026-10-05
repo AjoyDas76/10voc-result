@@ -77,8 +77,15 @@ def load_existing_index():
     try:
         with open(INDEX_PATH, "r", encoding="utf-8") as f:
             return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
+    except FileNotFoundError:
         return None
+    except json.JSONDecodeError as err:
+        print(
+            f"❌ {INDEX_PATH} ফাইলের লেখায় ভুল আছে: লাইন {err.lineno}, কলাম {err.colno} — {err.msg}\n"
+            f"   (সাধারণত কমা (,) বাদ পড়েছে বা শেষ লাইনে বাড়তি কমা আছে।) ফাইল ঠিক না করে সিঙ্ক চালালে "
+            f"বাকি পরীক্ষাগুলো তালিকা থেকে মুছে যেত, তাই থামানো হলো।"
+        )
+        sys.exit(1)
 
 
 def find_existing_entry(index_data, exam_id):
