@@ -18,6 +18,13 @@
       "examClass": "১০ম শ্রেণি (ভোকেশনাল)",
       "file": "results/pre_selection.json",
       "studentCount": 44
+    },
+    {
+      "id": "second_assessment",
+      "label": "২য় মূল্যায়ন পরীক্ষার ফলাফল",
+      "examClass": "১০ম শ্রেণি (ভোকেশনাল)",
+      "file": "results/second_assessment.json",
+      "studentCount": 44
     }
   ]
 }
