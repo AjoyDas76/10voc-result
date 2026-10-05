@@ -350,6 +350,9 @@ def convert_exam(
     exams_index = index_data["exams"]
     idx = next((i for i, e in enumerate(exams_index) if e["id"] == exam_id), None)
     if idx is not None:
+        # আগের এন্ট্রির publishAt (প্রকাশের সময়) যেন আপডেটে মুছে না যায়
+        if exams_index[idx].get("publishAt"):
+            index_entry["publishAt"] = exams_index[idx]["publishAt"]
         exams_index[idx] = index_entry
     else:
         exams_index.append(index_entry)
