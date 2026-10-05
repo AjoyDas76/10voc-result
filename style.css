@@ -1098,3 +1098,42 @@ a { color: inherit; }
   .badge-value { font-size: 24px; }
   .panel-actions .btn { font-size: 15px; }
 }
+
+/* ===== কাউন্টডাউন ব্যানার (হোমপেজের ওপরে) ===== */
+.countdown-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 10px;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-green-dark);
+  background: var(--color-pass-bg);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-card);
+}
+.countdown-banner[hidden] { display: none; }
+.cb-time { font-size: 17px; white-space: nowrap; }
+.cb-dot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--color-gold);
+  animation: cb-pulse 1.6s ease-in-out infinite;
+}
+@keyframes cb-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+@media (prefers-reduced-motion: reduce) { .cb-dot { animation: none; } }
+@media (max-width: 480px) {
+  .countdown-banner { font-size: 15px; padding: 9px 10px; }
+  .cb-time { font-size: 16px; }
+}
+@media print { .countdown-banner { display: none !important; } }
