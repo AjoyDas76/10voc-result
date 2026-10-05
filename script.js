@@ -43,6 +43,104 @@ let currentExamId = null;
 
 const el = (id) => document.getElementById(id);
 
+// ===== নির্ধারিত সময়ে ফলাফল প্রকাশ (exams.json-এ "publishAt") =====
+// publishAt না থাকলে ফলাফল সাথে সাথে প্রকাশিত ধরা হয়।
+// ফরম্যাট: "2026-10-20T10:00:00+06:00" (বাংলাদেশ সময়)
+let serverOffset = 0; // সার্ভারের ঘড়ি − ব্যবহারকারীর ফোনের ঘড়ি (ms)
+let unlockTimer = null;
+const DEFAULT_EMPTY_TEXT = "এই পরীক্ষার ফলাফল এখনো প্রকাশিত হয়নি। শীঘ্রই প্রকাশ করা হবে।";
+
+function nowMs() { return Date.now() + serverOffset; }
+
+function publishTime(examMeta) {
+  if (!examMeta || !examMeta.publishAt) return null;
+  const t = Date.parse(examMeta.publishAt);
+  return isNaN(t) ? null : t;
+}
+
+function isPublished(examMeta) {
+  const t = publishTime(examMeta);
+  return t === null || nowMs() >= t;
+}
+
+// ফলাফল ডেটা আছে এবং প্রকাশের সময় হয়ে গেছে
+function isOpen(examMeta) {
+  return !!examMeta && (examMeta.studentCount || 0) > 0 && isPublished(examMeta);
+}
+
+function toBn(n) {
+  return String(n).replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[d]);
+}
+
+function formatPublishTime(ms) {
+  try {
+    return new Intl.DateTimeFormat("bn-BD", {
+      timeZone: "Asia/Dhaka", day: "numeric", month: "long", year: "numeric",
+      hour: "numeric", minute: "2-digit", hour12: true
+    }).format(new Date(ms));
+  } catch (e) {
+    return new Date(ms).toLocaleString();
+  }
+}
+
+function formatCountdown(ms) {
+  let sec = Math.max(0, Math.floor(ms / 1000));
+  const d = Math.floor(sec / 86400); sec -= d * 86400;
+  const h = Math.floor(sec / 3600); sec -= h * 3600;
+  const m = Math.floor(sec / 60); sec -= m * 60;
+  const p2 = (n) => toBn(String(n).padStart(2, "0"));
+  return (d > 0 ? toBn(d) + " দিন " : "") + p2(h) + " ঘণ্টা " + p2(m) + " মিনিট " + p2(sec) + " সেকেন্ড";
+}
+
+// ----- "ফলাফল প্রকাশিত হয়নি" পপআপ -----
+function updateLockedCountdown(examMeta) {
+  const t = publishTime(examMeta);
+  const box = el("lockedCountdown");
+  if (t === null) { box.style.display = "none"; return; }
+  box.style.display = "block";
+  box.textContent = formatCountdown(t - nowMs());
+}
+
+function showNotPublishedPopup(examMeta) {
+  const t = publishTime(examMeta);
+  el("lockedText").textContent = t !== null
+    ? "ফলাফল প্রকাশ করা হবে " + formatPublishTime(t) + " (বাংলাদেশ সময়)। নির্ধারিত সময়ের পর আবার চেষ্টা করুন।"
+    : "এই পরীক্ষার ফলাফল এখনো প্রকাশিত হয়নি। শীঘ্রই প্রকাশ করা হবে।";
+  updateLockedCountdown(examMeta);
+  el("lockedModal").hidden = false;
+  el("lockedCloseBtn").focus();
+}
+
+function closeLockedPopup() {
+  el("lockedModal").hidden = true;
+}
+
+function refreshExamLabels() {
+  const select = el("examSelect");
+  ((DATA && DATA.exams) || []).forEach((exam) => {
+    const opt = Array.from(select.options).find((o) => o.value === exam.id);
+    if (opt) opt.textContent = (exam.label || exam.id) + (isPublished(exam) ? "" : " 🔒");
+  });
+}
+
+// নির্বাচিত পরীক্ষার সময় হয়ে গেলে নিজে থেকেই খুলে দেয়
+function startUnlockWatcher(examMeta) {
+  clearInterval(unlockTimer);
+  if (!examMeta || publishTime(examMeta) === null || isPublished(examMeta)) return;
+  unlockTimer = setInterval(() => {
+    if (currentExamId !== examMeta.id) { clearInterval(unlockTimer); return; }
+    if (isPublished(examMeta)) {
+      clearInterval(unlockTimer);
+      closeLockedPopup();
+      refreshExamLabels();
+      onExamChange();
+      showToast("ফলাফল এখন প্রকাশিত হয়েছে!");
+    } else if (!el("lockedModal").hidden) {
+      updateLockedCountdown(examMeta);
+    }
+  }, 1000);
+}
+
 // ===== Theme (dark / light) =====
 function currentTheme() {
   return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
@@ -141,6 +239,9 @@ async function loadData() {
   try {
     const res = await fetch("exams.json", { cache: "no-store" });
     if (!res.ok) throw new Error("exams.json fetch failed");
+    // ব্যবহারকারীর ফোনের ঘড়ি বদলে ফেললেও যাতে সময়ের তালা না খোলে — সার্ভারের সময় ধরা হচ্ছে
+    const serverDate = Date.parse(res.headers.get("Date") || "");
+    if (!isNaN(serverDate)) serverOffset = serverDate - Date.now();
     DATA = await res.json();
     renderLetterhead(DATA.school);
     await setupExamSelect(DATA.exams || []);
@@ -156,6 +257,7 @@ async function loadData() {
 async function loadExamStudents(examMeta, { silent } = {}) {
   if (examCache[examMeta.id]) return examCache[examMeta.id];
   if (!examMeta.file) return null;
+  if (!isPublished(examMeta)) return null; // প্রকাশের সময় হয়নি — ডেটা আনাই হবে না
   if (!silent) showLoading();
   try {
     const res = await fetch(examMeta.file, { cache: "no-store" });
@@ -208,7 +310,7 @@ async function setupExamSelect(exams) {
   exams.forEach((exam) => {
     const opt = document.createElement("option");
     opt.value = exam.id;
-    opt.textContent = exam.label || exam.id;
+    opt.textContent = (exam.label || exam.id) + (isPublished(exam) ? "" : " 🔒");
     select.appendChild(opt);
   });
 
@@ -217,8 +319,10 @@ async function setupExamSelect(exams) {
   const wantedExam = params.get("exam");
   const wantedRoll = params.get("roll");
 
+  const openExams = exams.filter(isOpen);
   const withData = exams.filter((e) => (e.studentCount || 0) > 0);
-  let defaultExam = withData.length ? withData[withData.length - 1] : exams[0];
+  let defaultExam = openExams.length ? openExams[openExams.length - 1]
+    : (withData.length ? withData[withData.length - 1] : exams[0]);
   const fromLink = wantedExam && exams.find((e) => e.id === wantedExam);
   if (fromLink) defaultExam = fromLink;
   select.value = defaultExam.id;
@@ -253,8 +357,19 @@ async function onExamChange() {
   examTag.textContent = examMeta ? [examMeta.examClass, examMeta.label].filter(Boolean).join(" • ") : "";
 
   const emptyMsg = el("examEmptyMsg");
-  const hasData = examMeta && (examMeta.studentCount || 0) > 0;
+  const hasData = isOpen(examMeta);
+  const locked = !!examMeta && (examMeta.studentCount || 0) > 0 && !isPublished(examMeta);
+  const lockTime = locked ? publishTime(examMeta) : null;
+  emptyMsg.textContent = lockTime !== null
+    ? "এই পরীক্ষার ফলাফল " + formatPublishTime(lockTime) + "-এ প্রকাশিত হবে।"
+    : DEFAULT_EMPTY_TEXT;
   emptyMsg.style.display = hasData ? "none" : "block";
+
+  clearInterval(unlockTimer);
+  if (locked) {
+    startUnlockWatcher(examMeta);
+    showNotPublishedPopup(examMeta);
+  }
 
   // pre-fetch this exam's result file in the background so the search feels instant
   const loadingMsg = el("examLoadingMsg");
@@ -441,8 +556,8 @@ async function search() {
     showError("পরীক্ষা নির্বাচন করা যায়নি, একটু পর আবার চেষ্টা করুন।");
     return;
   }
-  if (!(examMeta.studentCount > 0)) {
-    showError("এই পরীক্ষার ফলাফল এখনো প্রকাশিত হয়নি।");
+  if (!isOpen(examMeta)) {
+    showNotPublishedPopup(examMeta);
     return;
   }
 
@@ -478,7 +593,7 @@ async function renderCompare(roll) {
   const section = el("compareSection");
   section.style.display = "none";
 
-  const exams = ((DATA && DATA.exams) || []).filter((e) => (e.studentCount || 0) > 0);
+  const exams = ((DATA && DATA.exams) || []).filter(isOpen);
   if (exams.length < 2) return;
 
   const loaded = await Promise.all(exams.map((e) => loadExamStudents(e, { silent: true })));
@@ -603,8 +718,9 @@ async function togglePanel(name) {
 
   hideError();
   const examMeta = getCurrentExamMeta();
-  if (!examMeta || !(examMeta.studentCount > 0)) {
-    showError("এই পরীক্ষার ফলাফল এখনো প্রকাশিত হয়নি।");
+  if (!examMeta || !isOpen(examMeta)) {
+    if (examMeta) showNotPublishedPopup(examMeta);
+    else showError("পরীক্ষা নির্বাচন করা যায়নি, একটু পর আবার চেষ্টা করুন।");
     return;
   }
 
@@ -1131,6 +1247,9 @@ el("meritToggleBtn").addEventListener("click", () => togglePanel("merit"));
 el("statsToggleBtn").addEventListener("click", () => togglePanel("stats"));
 el("meritCloseBtn").addEventListener("click", () => closePanel("merit"));
 el("statsCloseBtn").addEventListener("click", () => closePanel("stats"));
+el("lockedCloseBtn").addEventListener("click", closeLockedPopup);
+el("lockedModal").addEventListener("click", (e) => { if (e.target === el("lockedModal")) closeLockedPopup(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLockedPopup(); });
 el("meritFilter").addEventListener("input", (e) => paintMeritRows(e.target.value));
 
 initTheme();
