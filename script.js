@@ -141,6 +141,50 @@ function startUnlockWatcher(examMeta) {
   }, 1000);
 }
 
+// ----- হোমপেজের ওপরের কাউন্টডাউন ব্যানার -----
+// যে পরীক্ষার publishAt এখনো আসেনি, তাদের মধ্যে সবচেয়ে কাছেরটার জন্য দেখায়।
+// ব্যানারে নাম বদলাতে চাইলে exams.json-এ "bannerLabel" দিন (যেমন "২য় মূল্যায়নের")।
+let bannerTimer = null;
+
+function nextUpcomingExam() {
+  const list = ((DATA && DATA.exams) || [])
+    .filter((e) => publishTime(e) !== null && !isPublished(e))
+    .sort((a, b) => publishTime(a) - publishTime(b));
+  return list[0] || null;
+}
+
+function updateCountdownBanner() {
+  const banner = el("countdownBanner");
+  const exam = nextUpcomingExam();
+  if (!exam) {
+    clearInterval(bannerTimer);
+    bannerTimer = null;
+    banner.hidden = true;
+    return;
+  }
+  el("cbLabel").textContent = exam.bannerLabel || exam.label || exam.id;
+  el("cbTime").textContent = formatCountdown(publishTime(exam) - nowMs());
+  banner.hidden = false;
+}
+
+function startCountdownBanner() {
+  clearInterval(bannerTimer);
+  bannerTimer = null;
+  if (!nextUpcomingExam()) { el("countdownBanner").hidden = true; return; }
+  updateCountdownBanner();
+  let shown = nextUpcomingExam();
+  bannerTimer = setInterval(() => {
+    const now = nextUpcomingExam();
+    if (shown && (!now || now.id !== shown.id)) {
+      // সময় হয়ে গেছে — তালা খোলার ভাব সব জায়গায় আপডেট
+      refreshExamLabels();
+      if (currentExamId !== shown.id) showToast((shown.label || "ফলাফল") + " এখন প্রকাশিত হয়েছে!");
+    }
+    shown = now;
+    updateCountdownBanner();
+  }, 1000);
+}
+
 // ===== Theme (dark / light) =====
 function currentTheme() {
   return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
@@ -244,6 +288,7 @@ async function loadData() {
     if (!isNaN(serverDate)) serverOffset = serverDate - Date.now();
     DATA = await res.json();
     renderLetterhead(DATA.school);
+    startCountdownBanner();
     await setupExamSelect(DATA.exams || []);
   } catch (err) {
     console.error(err);
