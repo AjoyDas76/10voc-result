@@ -1,0 +1,45 @@
+name: Sync marks to result files
+
+# চলে যখন:
+#   - marks/ ফোল্ডারে কোনো .xlsx/.meta.json ফাইল push হয় (main branch-এ)
+#   - অথবা Actions ট্যাব থেকে ম্যানুয়ালি "Run workflow" চাপলে
+on:
+  push:
+    branches: [main]
+    paths:
+      - "marks/**.xlsx"
+      - "marks/**.meta.json"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Convert marks/*.xlsx -> results/*.json + exams.json
+        run: python3 scripts/sync_marks.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "result-portal-bot"
+          git config user.email "actions@github.com"
+          git add results/ exams.json
+          if git diff --cached --quiet; then
+            echo "কোনো পরিবর্তন হয়নি — কমিট করার কিছু নেই।"
+          else
+            git commit -m "Auto-sync results from marks/*.xlsx [skip ci]"
+            git push
+          fi
