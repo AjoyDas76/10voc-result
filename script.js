@@ -536,11 +536,19 @@ function renderResult(student, exam, examMeta) {
     totalPassed = ranks.totalPassed;
     rank = ranks.rankMap.get(String(student.roll).trim()) || null;
   }
-  if (rank) {
+  if (!r.pass) {
+    // অনুত্তীর্ণ: মেধাক্রম প্রযোজ্য নয়, তাই বক্সে ফেল বিষয়ের সংখ্যা দেখাই
+    el("rankLabel").textContent = "ফেল বিষয়";
+    el("metaRank").textContent = r.failCount;
+    el("metaRankSub").textContent = "বিষয়ে অনুত্তীর্ণ";
+    rankBadge.className = "badge fail";
+  } else if (rank) {
+    el("rankLabel").textContent = "মেধাক্রম";
     el("metaRank").textContent = rank;
     el("metaRankSub").textContent = `${totalPassed} জনের মধ্যে`;
     rankBadge.className = "badge";
   } else {
+    el("rankLabel").textContent = "মেধাক্রম";
     el("metaRank").textContent = "—";
     el("metaRankSub").textContent = "প্রযোজ্য নয়";
     rankBadge.className = "badge" + (r.pass ? "" : " fail");
@@ -1009,7 +1017,7 @@ function roundRectPath(ctx, x, y, w, h, rad) {
 }
 
 async function buildResultImage(student, examMeta, exam, info) {
-  const FONT = '"Times New Roman", "Tiro Bangla", serif';
+  const FONT = '"Noto Serif Bengali", "Tiro Bangla", "Times New Roman", serif';
   const C = {
     paper: "#FFFFFE", ink: "#1C231F", soft: "#545A54", green: "#0B5E3C", greenDark: "#073F28",
     gold: "#C9A03E", goldSoft: "#E8DCB8", maroon: "#8C2F2F", passBg: "#EAF3EC", failBg: "#FBEBEB",
@@ -1019,6 +1027,8 @@ async function buildResultImage(student, examMeta, exam, info) {
   try {
     if (document.fonts && document.fonts.load) {
       await Promise.all([
+        document.fonts.load('700 30px "Noto Serif Bengali"', "বাংলা"),
+        document.fonts.load('400 30px "Noto Serif Bengali"', "বাংলা"),
         document.fonts.load('700 30px "Tiro Bangla"', "বাংলা"),
         document.fonts.load('400 30px "Tiro Bangla"', "বাংলা")
       ]);
@@ -1141,13 +1151,17 @@ async function buildResultImage(student, examMeta, exam, info) {
     if (sub) text(sub, x + badgeW / 2, y + 120, { size: 22, color: C.soft, align: "center", maxW: badgeW - 16 });
   };
   drawBadge(badgesLeft, "GPA", r.gpa, "", !r.pass);
-  drawBadge(
-    badgesLeft + badgeW + badgeGap,
-    "মেধাক্রম",
-    info.rank ? info.rank : "—",
-    info.rank ? `${info.totalPassed} জনের মধ্যে` : "প্রযোজ্য নয়",
-    !r.pass && !info.rank
-  );
+  if (!r.pass) {
+    drawBadge(badgesLeft + badgeW + badgeGap, "ফেল বিষয়", r.failCount, "বিষয়ে অনুত্তীর্ণ", true);
+  } else {
+    drawBadge(
+      badgesLeft + badgeW + badgeGap,
+      "মেধাক্রম",
+      info.rank ? info.rank : "—",
+      info.rank ? `${info.totalPassed} জনের মধ্যে` : "প্রযোজ্য নয়",
+      false
+    );
+  }
 
   // dashed separator
   ctx.save();
