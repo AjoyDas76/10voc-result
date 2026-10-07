@@ -41,7 +41,7 @@
 <link rel="preload" href="logo.png" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,15 +49,17 @@
   <div class="wrap">
     <img class="print-watermark" src="logo.png" alt="" aria-hidden="true">
 
-    <!-- পরবর্তী ফলাফল প্রকাশের কাউন্টডাউন ব্যানার (script.js নিজে থেকে দেখায়/লুকায়) -->
-    <div class="countdown-banner no-print" id="countdownBanner" role="status" hidden>
-      <span class="cb-dot" aria-hidden="true"></span>
-      <span class="cb-text"><span id="cbLabel"></span> ফলাফল আসছে:</span>
-      <b class="cb-time" id="cbTime"></b>
+    <!-- ওপরের বার: কাউন্টডাউন ব্যানার (script.js দেখায়/লুকায়) + থিম বাটন একই লাইনে -->
+    <div class="top-bar no-print">
+      <div class="countdown-banner" id="countdownBanner" role="status" hidden>
+        <span class="cb-dot" aria-hidden="true"></span>
+        <span class="cb-text"><span id="cbLabel"></span> ফলাফল আসছে:</span>
+        <b class="cb-time" id="cbTime"></b>
+      </div>
+      <button class="theme-btn no-print" id="themeBtn" type="button" aria-label="ডার্ক / লাইট মোড বদলান" title="ডার্ক / লাইট মোড">🌙</button>
     </div>
 
     <header class="letterhead">
-      <button class="theme-btn no-print" id="themeBtn" type="button" aria-label="ডার্ক / লাইট মোড বদলান" title="ডার্ক / লাইট মোড">🌙</button>
       <div class="letterhead-inner">
         <div class="letterhead-row">
           <img id="schoolLogo" class="school-logo" alt="স্কুলের লোগো" width="56" height="56" style="display:none;">
@@ -154,7 +156,7 @@
             <span class="badge-value" id="metaGPA"></span>
           </div>
           <div class="badge" id="rankBadge">
-            <span class="badge-label">মেধাক্রম</span>
+            <span class="badge-label" id="rankLabel">মেধাক্রম</span>
             <span class="badge-value" id="metaRank"></span>
             <span class="badge-sub" id="metaRankSub"></span>
           </div>
