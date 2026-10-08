@@ -632,7 +632,7 @@ async function search() {
   searchBtn.textContent = originalBtnText;
 
   if (!exam || !Array.isArray(exam.students) || exam.students.length === 0) {
-    showError("এই পরীক্ষার ফলাফল লোলোড করা যায়নি। ইন্টারনেট সংযোগ যাচাই করে আবার চেষ্টা করুন।");
+    showError("এই পরীক্ষার ফলাফল লোড করা যায়নি। ইন্টারনেট সংযোগ যাচাই করে আবার চেষ্টা করুন।");
     return;
   }
 
@@ -817,8 +817,7 @@ async function togglePanel(name) {
   if (!exam || !Array.isArray(exam.students) || exam.students.length === 0) {
     showError("তথ্য লোড করা যায়নি। ইন্টারনেট সংযোগ যাচাই করে আবার চেষ্টা করুন।");
     return;
-  }
-
+      }
   closePanels();
   if (name === "merit") renderMeritList(exam, examMeta);
   else renderStats(exam, examMeta);
@@ -887,7 +886,8 @@ function paintMeritRows(query) {
     tr.innerHTML = `<td colspan="5" class="merit-empty">কোনো ফলাফল পাওয়া যায়নি।</td>`;
     tbody.appendChild(tr);
     return;
-                 }
+  }
+
   rows.forEach(({ student, r, rank }) => {
     const tr = document.createElement("tr");
     if (selfKey !== null && normalizeRoll(student.roll) === selfKey) tr.className = "self-row";
@@ -996,7 +996,6 @@ function renderStats(exam, examMeta) {
     `;
   }).join("");
 }
-
 // ===== Share result =====
 async function shareResult() {
   if (!lastRenderedStudent || !lastRenderedInfo) return;
@@ -1119,7 +1118,8 @@ async function buildResultImage(student, examMeta, exam, info) {
     const wm = 620;
     ctx.drawImage(logo, (W - wm) / 2, (H - wm) / 2 + 40, wm, wm);
     ctx.restore();
-            }
+  }
+
   // header: logo, school name, address
   const cx = W / 2;
   if (logo) {
@@ -1237,7 +1237,6 @@ async function buildResultImage(student, examMeta, exam, info) {
       ctx.fillRect(P, y + rowH - 1, tableW, 2);
     }
   });
-
   // summary boxes
   const boxes = [
     { label: "ফলাফল", value: r.pass ? "উত্তীর্ণ" : "অনুত্তীর্ণ", color: r.pass ? C.greenDark : C.maroon },
@@ -1343,4 +1342,3 @@ initTheme();
 initPwa();
 setupAnalytics();
 loadData();
-    
