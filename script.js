@@ -1,7 +1,12 @@
 // ===== সেটিংস (দরকার হলে এখানে বদলান) =====
 const CONFIG = {
   // মেধাতালিকায় কতজনকে দেখানো হবে। 0 = সবাইকে (সম্পূর্ণ তালিকা), 10 = শুধু প্রথম ১০ জন
-  MERIT_LIMIT: 0
+  MERIT_LIMIT: 0,
+
+  // ভিজিটর গোনা (GoatCounter — বিনামূল্যে, কুকি/ট্র্যাকিং ছাড়া)।
+  // goatcounter.com-এ সাইট খুলে যে কোডটা পাবেন (https://CODE.goatcounter.com) সেই CODE এখানে বসান।
+  // ফাঁকা থাকলে কিছুই লোড হয় না।
+  GOATCOUNTER_CODE: ""
 };
 
 // ===== Grade point map (edit here if your board uses different values) =====
@@ -83,13 +88,28 @@ function formatPublishTime(ms) {
   }
 }
 
-function formatCountdown(ms) {
+// কাউন্টডাউন: ৪টা ঘর (দিন / ঘণ্টা / মিনিট / সেকেন্ড)। ঘর একবারই বানানো হয়, পরে শুধু সংখ্যা বদলায়।
+const CD_UNITS = ["দিন", "ঘণ্টা", "মিনিট", "সেকেন্ড"];
+
+function renderCountdown(box, ms) {
   let sec = Math.max(0, Math.floor(ms / 1000));
   const d = Math.floor(sec / 86400); sec -= d * 86400;
   const h = Math.floor(sec / 3600); sec -= h * 3600;
   const m = Math.floor(sec / 60); sec -= m * 60;
   const p2 = (n) => toBn(String(n).padStart(2, "0"));
-  return (d > 0 ? toBn(d) + " দিন " : "") + p2(h) + " ঘণ্টা " + p2(m) + " মিনিট " + p2(sec) + " সেকেন্ড";
+
+  if (!box.firstChild) {
+    box.innerHTML = CD_UNITS.map((u) =>
+      `<div class="cd-cell"><span class="cd-num"></span><span class="cd-lbl">${u}</span></div>`
+    ).join("");
+  }
+  const cells = box.children;
+  cells[0].style.display = d > 0 ? "" : "none"; // দিন ০ হলে ঘরটা লুকানো থাকে
+  cells[0].firstChild.textContent = toBn(d);
+  cells[1].firstChild.textContent = p2(h);
+  cells[2].firstChild.textContent = p2(m);
+  cells[3].firstChild.textContent = p2(sec);
+  box.setAttribute("aria-label", (d > 0 ? toBn(d) + " দিন " : "") + p2(h) + " ঘণ্টা " + p2(m) + " মিনিট " + p2(sec) + " সেকেন্ড");
 }
 
 // ----- "ফলাফল প্রকাশিত হয়নি" পপআপ -----
@@ -97,8 +117,8 @@ function updateLockedCountdown(examMeta) {
   const t = publishTime(examMeta);
   const box = el("lockedCountdown");
   if (t === null) { box.style.display = "none"; return; }
-  box.style.display = "block";
-  box.textContent = formatCountdown(t - nowMs());
+  box.style.display = "flex";
+  renderCountdown(box, t - nowMs());
 }
 
 function showNotPublishedPopup(examMeta) {
@@ -163,7 +183,7 @@ function updateCountdownBanner() {
     return;
   }
   el("cbLabel").textContent = exam.bannerLabel || exam.label || exam.id;
-  el("cbTime").textContent = formatCountdown(publishTime(exam) - nowMs());
+  renderCountdown(el("cbTime"), publishTime(exam) - nowMs());
   banner.hidden = false;
 }
 
@@ -577,17 +597,6 @@ function renderResult(student, exam, examMeta) {
   statusEl.className = "value " + (r.pass ? "status-pass" : "status-fail");
 
   el("gpaValue").textContent = r.gpa;
-  el("failValue").textContent = r.failCount;
-
-  const failBox = el("failBox");
-  const summaryGrid = failBox.parentElement;
-  if (r.pass) {
-    failBox.style.display = "none";
-    summaryGrid.classList.add("two-col");
-  } else {
-    failBox.style.display = "";
-    summaryGrid.classList.remove("two-col");
-  }
 
   el("resultCard").style.display = "block";
   renderCompare(student.roll);
@@ -623,7 +632,7 @@ async function search() {
   searchBtn.textContent = originalBtnText;
 
   if (!exam || !Array.isArray(exam.students) || exam.students.length === 0) {
-    showError("এই পরীক্ষার ফলাফল লোড করা যায়নি। ইন্টারনেট সংযোগ যাচাই করে আবার চেষ্টা করুন।");
+    showError("এই পরীক্ষার ফলাফল লোলোড করা যায়নি। ইন্টারনেট সংযোগ যাচাই করে আবার চেষ্টা করুন।");
     return;
   }
 
@@ -636,6 +645,27 @@ async function search() {
 
   renderResult(student, exam, examMeta);
   updateUrl(examMeta.id, student.roll);
+  trackEvent("result-view/" + examMeta.id, "ফলাফল দেখা");
+}
+
+// ===== ভিজিটর গোনা (GoatCounter) =====
+function setupAnalytics() {
+  const code = (CONFIG.GOATCOUNTER_CODE || "").trim();
+  if (!code || !/^https?:$/.test(location.protocol)) return;
+  const sc = document.createElement("script");
+  sc.async = true;
+  sc.src = "https://gc.zgo.at/count.js";
+  sc.dataset.goatcounter = `https://${code}.goatcounter.com/count`;
+  document.head.appendChild(sc);
+}
+
+// "কতজন ফলাফল দেখল" গোনার জন্য — শুধু পরীক্ষার নাম যায়, Roll বা নাম নয়
+function trackEvent(path, title) {
+  try {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path, title, event: true });
+    }
+  } catch (e) { /* গোনা ব্যর্থ হলেও সাইট চলবে */ }
 }
 
 // ===== Exam-wise GPA comparison =====
@@ -857,8 +887,7 @@ function paintMeritRows(query) {
     tr.innerHTML = `<td colspan="5" class="merit-empty">কোনো ফলাফল পাওয়া যায়নি।</td>`;
     tbody.appendChild(tr);
     return;
-  }
-
+                 }
   rows.forEach(({ student, r, rank }) => {
     const tr = document.createElement("tr");
     if (selfKey !== null && normalizeRoll(student.roll) === selfKey) tr.className = "self-row";
@@ -953,8 +982,9 @@ function renderStats(exam, examMeta) {
     const totalTxt = m.total !== undefined && m.total !== null ? ` <span class="of">/ ${escapeHtml(m.total)}</span>` : "";
     let top = "—";
     if (m.count) {
-      const extra = m.topNames.length > 1 ? ` +${m.topNames.length - 1}` : "";
-      top = `<b>${escapeHtml(fmtNum(m.max))}</b>${totalTxt}<div class="top-name">${escapeHtml(m.topNames[0])}${extra}</div>`;
+      const shown = m.topNames.slice(0, 3).map((n) => `<div class="top-name">${escapeHtml(n)}</div>`).join("");
+      const more = m.topNames.length > 3 ? `<div class="top-name">+${toBn(m.topNames.length - 3)} জন</div>` : "";
+      top = `<b>${escapeHtml(fmtNum(m.max))}</b>${totalTxt}${shown}${more}`;
     }
     return `
       <tr>
@@ -1089,8 +1119,7 @@ async function buildResultImage(student, examMeta, exam, info) {
     const wm = 620;
     ctx.drawImage(logo, (W - wm) / 2, (H - wm) / 2 + 40, wm, wm);
     ctx.restore();
-  }
-
+            }
   // header: logo, school name, address
   const cx = W / 2;
   if (logo) {
@@ -1214,7 +1243,6 @@ async function buildResultImage(student, examMeta, exam, info) {
     { label: "ফলাফল", value: r.pass ? "উত্তীর্ণ" : "অনুত্তীর্ণ", color: r.pass ? C.greenDark : C.maroon },
     { label: "সর্বমোট GPA", value: r.gpa, color: r.pass ? C.greenDark : C.maroon }
   ];
-  if (!r.pass) boxes.push({ label: "ফেল বিষয়", value: String(r.failCount), color: C.maroon });
   const gap = 20;
   const bw = (tableW - gap * (boxes.length - 1)) / boxes.length;
   boxes.forEach((b, i) => {
@@ -1313,4 +1341,6 @@ el("meritFilter").addEventListener("input", (e) => paintMeritRows(e.target.value
 
 initTheme();
 initPwa();
+setupAnalytics();
 loadData();
+    
