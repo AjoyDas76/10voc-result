@@ -56,7 +56,7 @@
       <div class="countdown-banner" id="countdownBanner" role="status" hidden>
         <span class="cb-dot" aria-hidden="true"></span>
         <span class="cb-text"><span id="cbLabel"></span> ফলাফল আসছে:</span>
-        <b class="cb-time" id="cbTime"></b>
+        <div class="cd-boxes cb-time" id="cbTime" role="timer" aria-live="off"></div>
       </div>
       <button class="theme-btn no-print" id="themeBtn" type="button" aria-label="ডার্ক / লাইট মোড বদলান" title="ডার্ক / লাইট মোড">🌙</button>
     </div>
@@ -105,11 +105,11 @@
         <button class="merit-close" id="meritCloseBtn" type="button" aria-label="বন্ধ করুন">✕</button>
       </div>
       <input type="search" id="meritFilter" class="merit-filter" placeholder="নাম বা Roll দিয়ে খুঁজুন" autocomplete="off" aria-label="মেধাতালিকায় খুঁজুন">
-      <div class="table-scroll">
+      <div class="table-scroll merit-scroll">
         <table class="subject-table merit-table">
           <thead>
             <tr>
-              <th>মেধাক্রম</th>
+              <th title="মেধাক্রম">ক্রম</th>
               <th>Roll</th>
               <th>নাম</th>
               <th>GPA</th>
@@ -189,10 +189,6 @@
           <div class="label">সর্বমোট GPA</div>
           <div class="value" id="gpaValue">-</div>
         </div>
-        <div class="summary-box" id="failBox">
-          <div class="label">ফেল বিষয়</div>
-          <div class="value" id="failValue">-</div>
-        </div>
       </div>
 
       <div class="signature-block">
@@ -231,7 +227,7 @@
       <div class="modal-icon" aria-hidden="true">🔒</div>
       <h2 class="modal-title" id="lockedTitle">ফলাফল প্রকাশিত হয়নি</h2>
       <p class="modal-text" id="lockedText"></p>
-      <div class="modal-countdown" id="lockedCountdown" aria-live="off"></div>
+      <div class="modal-countdown cd-boxes" id="lockedCountdown" role="timer" aria-live="off"></div>
       <button class="btn btn-primary" id="lockedCloseBtn" type="button">ঠিক আছে</button>
     </div>
   </div>
