@@ -1,7 +1,7 @@
 // Service worker — অফলাইনে আগে দেখা ফলাফল দেখানোর জন্য।
 // নীতি: আগে ইন্টারনেট থেকে নতুন ফাইল আনার চেষ্টা (তাই ফলাফল আপডেট করলে সাথে সাথে দেখা যায়),
 // ইন্টারনেট না থাকলে সর্বশেষ সেভ করা কপি দেখায়।
-const CACHE = "result-portal-v2"; // ফাইল বড় বদলালে সংখ্যা বাড়ান (v3, v4…) — পুরোনো ক্যাশ নিজে মুছে যাবে
+const CACHE = "result-portal-v4"; // ফাইল বড় বদলালে সংখ্যা বাড়ান (v3, v4…) — পুরোনো ক্যাশ নিজে মুছে যাবে
 const FONT_HOSTS = ["fonts.googleapis.com", "fonts.gstatic.com"];
 
 self.addEventListener("install", (event) => {
